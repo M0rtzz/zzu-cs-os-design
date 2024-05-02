@@ -344,7 +344,7 @@ make all
 
 ## 第三题
 
-#### ①代码（构建工具同上）
+### ①代码（构建工具同上）
 
 ```c
 /**
@@ -613,7 +613,7 @@ signed main()
 }
 ```
 
-#### ②运行
+### ②运行
 
 ```shell
 make all
@@ -820,7 +820,7 @@ m0rtzz.s m0rtzz.o: m0rtzz.c ../include/asm/segment.h ../include/string.h ../incl
 
 ![image-20240501001113260](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/00:11:13_image-20240501001113260.png)
 
-#### ⑤编译linux-0.12
+### ④编译linux-0.12
 
 ```shell
 cd oslab/
@@ -858,7 +858,7 @@ fi
 ./run.sh -m # 编译内核源码
 ```
 
-#### ⑤编写代码
+### ⑤编写代码
 
 ```shell
 cd oslab/
@@ -998,7 +998,7 @@ clean:
 	rm -f *.out
 ```
 
-#### ⑥进入linux-0.12编译并运行代码
+### ⑥进入linux-0.12编译并运行代码
 
 ```shell
 cd oslab/
@@ -1039,14 +1039,17 @@ make all # make的时候如果卡住不动可以在本地终端再输入 `c` 键
 
 ![image-20240501195322602](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:53:22_image-20240501195322602.png)
 
-#### ⑦卸载文件系统
+### ⑦退出linux-0.12卸载文件系统
+
+`ctrl + c` 并在本地终端输入 `q` 键并回车退出模拟器
+
+![image-20240501195904170](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:59:04_image-20240501195904170.png)
+
+### ⑧卸载文件系统
 
 ```shell
-# `ctrl + c` 并在本地终端输入 `q` 键并回车退出模拟器后再执行以下操作
 sudo chmod +x umount.sh
 ./umount.sh
 ```
 
-![image-20240501195904170](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:59:04_image-20240501195904170.png)
-
-![image-20240502193319433](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/19:33:24_image-20240502193319433.png)
+![image-20240502195733660](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/19:57:38_image-20240502195733660.png)
