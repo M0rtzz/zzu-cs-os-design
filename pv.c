@@ -31,7 +31,7 @@ char buffer_2[BUFFER_SIZE];
 sem_t empty_1, full_1, empty_2, full_2;
 
 /**
- * @brief
+ * @brief 生产者
  * @param arg
  * @return void*
  */
