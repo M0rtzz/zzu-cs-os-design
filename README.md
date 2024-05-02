@@ -1048,3 +1048,5 @@ sudo chmod +x umount.sh
 ```
 
 ![image-20240501195904170](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:59:04_image-20240501195904170.png)
+
+![image-20240502193319433](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/19:33:24_image-20240502193319433.png)
