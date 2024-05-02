@@ -25,7 +25,8 @@ signed main()
     // 客户端套接字描述符
     int sockfd;
     int len = 0;
-    struct sockaddr_in address; // 套接字协议地址
+    // 套接字协议地址
+    struct sockaddr_in address;
     // 发送消息缓冲区
     char snd_buf[1024];
     // 接收消息缓冲区
