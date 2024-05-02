@@ -114,6 +114,12 @@ sudo chmod +x score.sh
 
 ![image-20240430205354433](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:04/Day:30/20:53:59_image-20240430205354433.png)
 
+```shell
+cat ./score/sorted_scores.txt
+```
+
+![image-20240502170715779](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/17:07:15_image-20240502170715779.png)
+
 ---
 
 ## 第二题
@@ -138,7 +144,7 @@ sudo apt update -y && sudo apt upgrade -y && sudo apt install clang clangd llvm 
 clang --version
 ```
 
-![image-20240415195942218](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:04/Day:15/19:59:49_image-20240415195942218.png)
+![image-20240502170439665](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/17:04:44_image-20240502170439665.png)
 
 ### ②构建工具
 
@@ -332,6 +338,8 @@ make all
 ./out/pv.out
 ```
 
+![image-20240502170919572](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/17:09:19_image-20240502170919572.png)
+
 ---
 
 ## 第三题
@@ -360,21 +368,17 @@ make all
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-#define LinkNum 5 // 连接数
+#define MAX_LINK_NUM 5 // 连接数
 
 // 分别记录服务器端的套接字与连接的多个客户端的套接字
-int client_sockfd[LinkNum];
+int client_sockfd[MAX_LINK_NUM];
 // 命名套接字
 int server_sockfd = -1;
 // 当前连接数
-int curLink = 0;
+int cur_link = 0;
 // 表示连接数的资源信号量
 sem_t mutex;
-// 服务器端发送消息缓冲区
-char stopmsg[100];
-
-int success_client_num = 0;
-
+// 答案
 int secret_num = 0;
 
 /**
@@ -414,7 +418,6 @@ void rcv_snd(int n)
             else
             {
                 strcpy(send_buf, "猜对了");
-                ++success_client_num;
                 write(client_sockfd[n], send_buf, strlen(send_buf));
                 break;
             }
@@ -428,8 +431,8 @@ void rcv_snd(int n)
     // 关闭服务器监听套接字
     close(server_sockfd);
     client_sockfd[n] = -1;
-    curLink--;
-    printf("当前连接数为：%d\n", curLink);
+    cur_link--;
+    printf("当前连接数为：%d\n", cur_link);
     sem_post(&mutex);
     pthread_exit(&retval);
 }
@@ -461,26 +464,26 @@ signed main()
     bind(server_sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr)); // 协议套接字命名为server_sockfd
     printf("1、服务器开始listen...\n");
     /*创建连接数最大为LinkNum的套接字队列，监听命名套接字，listen不会阻塞，它向内核报告套接字和最大连接数*/
-    listen(server_sockfd, LinkNum);
+    listen(server_sockfd, MAX_LINK_NUM);
     // 忽略子进程停止或退出信号
     signal(SIGCHLD, SIG_IGN);
 
-    for (i = 0; i < LinkNum; i++)
+    for (i = 0; i < MAX_LINK_NUM; i++)
         client_sockfd[i] = -1; // 初始化连接队列
 
-    sem_init(&mutex, 0, LinkNum); // 信号量mutex初始化为连接数
+    sem_init(&mutex, 0, MAX_LINK_NUM); // 信号量mutex初始化为连接数
 
     while (true)
     {
         // 搜寻空闲连接
-        for (i = 0; i < LinkNum; i++)
+        for (i = 0; i < MAX_LINK_NUM; i++)
             if (client_sockfd[i] == -1)
                 break;
 
         // 如果达到最大连接数，则客户等待
-        if (i == LinkNum)
+        if (i == MAX_LINK_NUM)
         {
-            printf("已经达到最大连接数%d,请等待其它客户释放连接...\n", LinkNum);
+            printf("已经达到最大连接数%d,请等待其它客户释放连接...\n", MAX_LINK_NUM);
             // 阻塞等待空闲连接
             sem_wait(&mutex);
             // 被唤醒后继续监测是否有空闲连接
@@ -491,10 +494,10 @@ signed main()
         printf("2、服务器开始accept...i=%d\n", i);
         client_sockfd[i] = accept(server_sockfd, (struct sockaddr *)&client_addr, &client_len);
         // 当前连接数增1
-        curLink++;
+        cur_link++;
         // 可用连接数信号量mutex减1
         sem_wait(&mutex);
-        printf("当前连接数为：%d(<=%d)\n", curLink, LinkNum);
+        printf("当前连接数为：%d(<=%d)\n", cur_link, MAX_LINK_NUM);
         // 输出客户端地址信息
         printf("连接来自:连接套接字号=%d,IP地址=%s,端口号=%d\n", client_sockfd[i], inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port));
         pthread_create(malloc(sizeof(pthread_t)), NULL, (void *)(&rcv_snd), (void *)i);
@@ -532,7 +535,8 @@ signed main()
     // 客户端套接字描述符
     int sockfd;
     int len = 0;
-    struct sockaddr_in address; // 套接字协议地址
+    // 套接字协议地址
+    struct sockaddr_in address;
     // 发送消息缓冲区
     char snd_buf[1024];
     // 接收消息缓冲区
