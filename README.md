@@ -1041,7 +1041,7 @@ make all # make的时候如果卡住不动可以在本地终端再输入 `c` 键
 
 ### ⑦退出linux-0.12
 
-`ctrl + c` 并在本地终端输入 `q` 键并回车退出模拟器
+在本地终端输入 `ctrl + c` 后输入 `q` 键并回车即可退出模拟器：
 
 ![image-20240501195904170](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:59:04_image-20240501195904170.png)
 
