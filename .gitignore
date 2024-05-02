@@ -1,0 +1,5 @@
+linux/src/code/bochs-2.6.9
+linux/src/code/bochs-gdb
+linux/linux-0.12/**/*.o
+.cz-config.js
+out/

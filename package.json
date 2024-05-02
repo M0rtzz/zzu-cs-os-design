@@ -1,0 +1,15 @@
+{
+  "name": "zzu-cs-os-design",
+  "version": "1.0.0",
+  "description": "郑州大学计科2024操作系统实验设计",
+  "main": ".cz-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitcode.com:M0rtzz/zzu-cs-os-design.git"
+  },
+  "author": "M0rtzz",
+  "license": "MIT"
+}
