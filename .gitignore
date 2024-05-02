@@ -1,5 +1,9 @@
 linux/src/code/bochs-2.6.9
 linux/src/code/bochs-gdb
 linux/linux-0.12/**/*.o
+linux/linux-0.12/Image
+linux/oslab/hdc.img.lock
+linux/oslab/hdc.img
+linux/oslab/Image
 .cz-config.js
 out/
