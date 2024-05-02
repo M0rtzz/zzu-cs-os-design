@@ -1039,7 +1039,7 @@ make all # make的时候如果卡住不动可以在本地终端再输入 `c` 键
 
 ![image-20240501195322602](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:53:22_image-20240501195322602.png)
 
-### ⑦退出linux-0.12卸载文件系统
+### ⑦退出linux-0.12
 
 `ctrl + c` 并在本地终端输入 `q` 键并回车退出模拟器
 
