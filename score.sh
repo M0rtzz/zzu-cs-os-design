@@ -10,7 +10,6 @@
 rm -f ./score/sorted_scores.txt
 
 # 按分数逆序排序
-# cat ./score/*.txt | awk '{print $1, $4, $5}' | sort -k3 -rn > ./score/sorted_scores.txt
 {
     for file in ./score/*.txt; do
         cat "$file" | awk '{print $1, $4, $5}'
