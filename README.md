@@ -368,12 +368,12 @@ make all
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-#define MAX_LINK_NUM 5 // 连接数
+#define MAX_LINK_NUM 5 // 最大连接数
 
-// 分别记录服务器端的套接字与连接的多个客户端的套接字
+// 用于存储已连接客户端套接字的数组
 int client_sockfd[MAX_LINK_NUM];
-// 命名套接字
-int server_sockfd = -1;
+// 用于创建和监听的服务器套接字
+int server_sockfd;
 // 当前连接数
 int cur_link = 0;
 // 表示连接数的资源信号量
@@ -534,6 +534,7 @@ signed main()
 {
     // 客户端套接字描述符
     int sockfd;
+    // 地址结构体的长度
     int len = 0;
     // 套接字协议地址
     struct sockaddr_in address;
@@ -541,6 +542,7 @@ signed main()
     char snd_buf[1024];
     // 接收消息缓冲区
     char rcv_buf[1024];
+    // connect函数调用的结果
     int result;
     // 接收消息长度
     int rcv_num;
