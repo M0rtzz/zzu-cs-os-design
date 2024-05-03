@@ -24,6 +24,7 @@ signed main()
 {
     // 客户端套接字描述符
     int sockfd;
+    // 地址结构体的长度
     int len = 0;
     // 套接字协议地址
     struct sockaddr_in address;
@@ -31,6 +32,7 @@ signed main()
     char snd_buf[1024];
     // 接收消息缓冲区
     char rcv_buf[1024];
+    // connect函数调用的结果
     int result;
     // 接收消息长度
     int rcv_num;
