@@ -114,7 +114,7 @@ signed main()
     server_addr.sin_port = htons(9736);
     bind(server_sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr)); // 协议套接字命名为server_sockfd
     printf("1、服务器开始listen...\n");
-    /*创建连接数最大为LinkNum的套接字队列，监听命名套接字，listen不会阻塞，它向内核报告套接字和最大连接数*/
+    // 创建连接数最大为MAX_LINK_NUM的套接字队列，监听命名套接字，listen不会阻塞，它向内核报告套接字和最大连接数
     listen(server_sockfd, MAX_LINK_NUM);
     // 忽略子进程停止或退出信号
     signal(SIGCHLD, SIG_IGN);
