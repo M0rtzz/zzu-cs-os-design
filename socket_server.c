@@ -19,7 +19,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-#define MAX_LINK_NUM 5 // 连接数
+#define MAX_LINK_NUM 5 // 最大连接数
 
 // 分别记录服务器端的套接字与连接的多个客户端的套接字
 int client_sockfd[MAX_LINK_NUM];
