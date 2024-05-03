@@ -21,20 +21,20 @@
 #include <netinet/in.h>
 #define MAX_LINK_NUM 5 // 最大连接数
 
-// 用于存储已连接客户端套接字的数组
+// 用已连接客户端套接字
 int client_sockfd[MAX_LINK_NUM];
-// 用于创建和监听的服务器套接字
+// 服务器套接字
 int server_sockfd;
 // 当前连接数
 int cur_link = 0;
-// 表示连接数的资源信号量
+// 同步服务器连接数的信号量
 sem_t mutex;
 // 答案
 int secret_num = 0;
 
 /**
- * @brief  服务器与客户端的收发通信函数，n为连接数组序号
- * @param  n
+ * @brief 服务器与客户端的收发通信函数，n为连接数组序号
+ * @param n
  */
 void rcv_snd(int n)
 {
