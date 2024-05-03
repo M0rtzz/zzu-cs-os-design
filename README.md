@@ -954,7 +954,7 @@ int main(int argc, char **argv)
 ```c
 /**
  * @file hdc/usr/root/m0rtzz_2.c
- * @brief 用系统调用 `__NR_ashore`
+ * @brief 使用系统调用 `__NR_ashore`
  * @author M0rtzz E-mail : m0rtzz@outlook.com
  * @version 1.0
  * @date 2024-05-01
