@@ -63,6 +63,7 @@ bochs_install(){
     sudo apt-get install -y build-essential &> /dev/null
     sudo apt-get install -y bochs bochs-x bochs-sdl &> /dev/null
     
+    # NOTE: M0rtzz have resolved the bug in the source code
     # if [ ! -e "bochs-2.2.6.tar.gz" ]; then
     #     # wget https://downloads.sourceforge.net/project/bochs/bochs/2.6.9/bochs-2.2.6.tar.gz -q --show-progress  && \
     #     wget https://sourceforge.net/projects/bochs/files/bochs/2.6.9/bochs-2.2.6.tar.gz -q --show-progress  && \
