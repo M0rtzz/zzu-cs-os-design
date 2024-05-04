@@ -4,6 +4,7 @@
 
 ```shell
 git clone https://gitcode.com/M0rtzz/zzu-cs-os-design.git
+cd zzu-cs-os-design
 ```
 
 ## 第一题
@@ -11,7 +12,8 @@ git clone https://gitcode.com/M0rtzz/zzu-cs-os-design.git
 ### ①准备
 
 ```shell
-mkdir score && touch {score/1.txt, score/2.txt, score/3.txt}
+mkdir score
+touch score/1.txt score/2.txt score/3.txt
 ```
 
 内容如下：
