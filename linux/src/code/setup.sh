@@ -78,6 +78,7 @@ bochs_install(){
 
     if [ -d "bochs-2.2.6" ];then
         cd bochs-2.2.6
+        make clean
         if [ "$1" ] && [ "$1" = "-d" ];then
         # sudo apt-get install aptitude && sudo apt install libgtk2.0-dev
         sudo apt update && sudo apt install libgtk2.0-dev
