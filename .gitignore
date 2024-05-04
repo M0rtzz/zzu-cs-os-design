@@ -1,4 +1,6 @@
-linux/src/code/bochs-2.6.9
+linux/src/code/bochs-2.2.6.tar.gz
+linux/src/code/bochs-2.2.6/**/*.o
+linux/src/code/bochs-2.2.6/**/*.a
 linux/src/code/bochs-gdb
 linux/linux-0.12/**/*.o
 linux/linux-0.12/Image
@@ -6,4 +8,5 @@ linux/oslab/hdc.img.lock
 linux/oslab/hdc.img
 linux/oslab/Image
 .cz-config.js
+.husky/
 out/
