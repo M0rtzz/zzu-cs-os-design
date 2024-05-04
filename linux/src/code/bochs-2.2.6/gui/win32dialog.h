@@ -1,0 +1,12 @@
+/////////////////////////////////////////////////////////////////////////
+// $Id: win32dialog.h,v 1.8 2005/10/22 11:00:00 vruppert Exp $
+/////////////////////////////////////////////////////////////////////////
+
+#include "config.h"
+
+#if BX_USE_TEXTCONFIG && defined(WIN32)
+
+int RuntimeOptionsDialog();
+void win32_init_notify_callback();
+
+#endif
