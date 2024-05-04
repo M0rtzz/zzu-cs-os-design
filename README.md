@@ -683,7 +683,7 @@ cd linux/src/code/
 >   // #endif
 >   ```
 >
->   ![image-20240504232505169](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:25:05_image-20240504232505169.png)
+>   ![image-20240505000834056](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:05/00:08:34_image-20240505000834056.png)
 
 ### ②改写内核源码过程（`linux/linux-0.12/`）
 
