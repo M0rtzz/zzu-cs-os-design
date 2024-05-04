@@ -641,6 +641,12 @@ make all
 
 ### ①源码编译安装gdb版Bochs（x86模拟器）
 
+安装版本为Bochs-2.2.6，原因是：
+
+[*https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST*](https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST)
+
+![image-20240505001129646](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:05/00:11:29_image-20240505001129646.png)
+
 因不想使用`linux/src/code/setup.sh`中的`aptitude`工具（此工具一般用于解决依赖问题，它会`autoremove`系统中的软件包），但此系统使用`apt`安装时没有遇见依赖问题，所以我将它换成了`apt`：
 
 ```shell
