@@ -9,5 +9,6 @@ linux/oslab/hdc.img.lock
 linux/oslab/hdc.img
 linux/oslab/Image
 .cz-config.js
+**/*.log
 .husky/
 out/
