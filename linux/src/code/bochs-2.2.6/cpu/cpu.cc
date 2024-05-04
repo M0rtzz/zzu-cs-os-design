@@ -139,7 +139,7 @@ void BX_CPU_C::cpu_loop(Bit32s max_instr_count)
     // only from exception function can we get here ...
     BX_INSTR_NEW_INSTRUCTION(BX_CPU_ID);
 
-# BUG: fix bug
+// BUG: fix bug
 // #if BX_GDBSTUB
 //     if (bx_dbg.gdbstub_enabled) {
 //       return;
