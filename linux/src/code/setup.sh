@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/sudo /bin/bash
 
 # 如果在编译bochs时遇到libgtk2.0-dev 依赖问题，请手动执行
 #   sudo apt-get install aptitude && sudo aptitude install libgtk2.0-dev
@@ -63,6 +63,7 @@ bochs_install(){
     sudo apt-get install -y build-essential &> /dev/null
     sudo apt-get install -y bochs bochs-x bochs-sdl &> /dev/null
     
+    # INFO:https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST
     # NOTE: M0rtzz have resolved the bug in the source code
     # if [ ! -e "bochs-2.2.6.tar.gz" ]; then
     #     # wget https://downloads.sourceforge.net/project/bochs/bochs/2.6.9/bochs-2.2.6.tar.gz -q --show-progress  && \
@@ -86,10 +87,10 @@ bochs_install(){
         ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
         # ./configure --enable-debugger --enable-disasm
         # ./configure --enable-disasm --enable-debugger --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
-        make -j$(nproc) && (cp bochs ./bochsdbg & cp bochs ../bochs-gdb & cp bochs ../../../oslab/bochs/bochs-gdb & _echo_succ "make bochs sucessfully.") || _echo_err "make bochs unsucessfully.!!!"
+        make -j$(nproc) && (cp bochs ./bochsdbg & cp bochs ../bochs-gdb & cp bochs ../../../oslab/bochs/bochs-gdb & _echo_succ "make bochs sucessfully.") && sudo make install || _echo_err "make bochs unsucessfully.!!!"
         else
         ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
-        make -j$(nproc) && (cp bochs ./bochsdbg & cp bochs ../bochs-gdb & cp bochs ../../../oslab/bochs/bochs-gdb & _echo_succ "make bochs sucessfully.") || _echo_err "make bochs unsucessfully.!!!"
+        make -j$(nproc) && (cp bochs ./bochsdbg & cp bochs ../bochs-gdb & cp bochs ../../../oslab/bochs/bochs-gdb & _echo_succ "make bochs sucessfully.") && sudo make install || _echo_err "make bochs unsucessfully.!!!"
         fi
     fi
 
