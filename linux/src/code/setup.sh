@@ -103,10 +103,10 @@ function onCtrlC () {
     exit
 }
 echo " 须知"
-echo "     请根据oslab/README.txt中的第2点，修改下载的bochs-2.2.6源码，并重新执行该脚本"
+# echo "     请根据oslab/README.txt中的第2点，修改下载的bochs-2.2.6源码，并重新执行该脚本"
 echo "脚本将完成以下两件事："
 echo "     1. 为系统安装相应的编译环境（make，bin86，gcc-3.4，gcc-multilib）"
-echo "     2. 在脚本当前目录生成一个bochs-gdb（若没有生成,使用./setup.sh -d 重新执行脚本）"
+echo "     2. 在脚本当前目录及\${OSLAB_PATH}/bochs/下生成一个bochs-gdb（若没有生成,使用./setup.sh -d 重新执行脚本）"
 
 env_install
 bochs_install $1
