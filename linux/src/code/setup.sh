@@ -63,28 +63,31 @@ bochs_install(){
     sudo apt-get install -y build-essential &> /dev/null
     sudo apt-get install -y bochs bochs-x bochs-sdl &> /dev/null
     
-    if [ ! -e "bochs-2.6.9.tar.gz" ]; then
-        wget https://downloads.sourceforge.net/project/bochs/bochs/2.6.9/bochs-2.6.9.tar.gz -q --show-progress  && \
-        _echo_succ "Download bochs-2.6.9.tar.gz Sucessfully." || (rm bochs-2.6.9.tar.gz & _echo_err "Download bochs-2.6.9.tar.gz unsuccessfully!!!" )
-    fi
+    # if [ ! -e "bochs-2.2.6.tar.gz" ]; then
+    #     # wget https://downloads.sourceforge.net/project/bochs/bochs/2.6.9/bochs-2.2.6.tar.gz -q --show-progress  && \
+    #     wget https://sourceforge.net/projects/bochs/files/bochs/2.6.9/bochs-2.2.6.tar.gz -q --show-progress  && \
+    #     _echo_succ "Download bochs-2.2.6.tar.gz Sucessfully." || (rm bochs-2.2.6.tar.gz & _echo_err "Download bochs-2.2.6.tar.gz unsuccessfully!!!" )
+    # fi
 
-    if [ ! -d "bochs-2.6.9" ];then
-        tar zxvf bochs-2.6.9.tar.gz &> /dev/null && \
-        _echo_info "tar bochs-2.6.9.tar.gz Sucessfullyhttp://mirrors.ustc.edu.cn/ubuntu-old-releases/." || \
-        (rm -rf ../bochs-2.6.9 & _echo_err "tar bochs-2.6.9.tar.gz unsuccessfully!!!" )
-    fi
+    # if [ ! -d "bochs-2.2.6" ];then
+    #     tar zxvf bochs-2.2.6.tar.gz &> /dev/null && \
+    #     _echo_info "tar bochs-2.2.6.tar.gz Sucessfullyhttp://mirrors.ustc.edu.cn/ubuntu-old-releases/." || \
+    #     (rm -rf ../bochs-2.2.6 & _echo_err "tar bochs-2.2.6.tar.gz unsuccessfully!!!" )
+    # fi
 
-    if [ -d "bochs-2.6.9" ];then
-        cd bochs-2.6.9
+    if [ -d "bochs-2.2.6" ];then
+        cd bochs-2.2.6
         if [ "$1" ] && [ "$1" = "-d" ];then
         # sudo apt-get install aptitude && sudo apt install libgtk2.0-dev
         sudo apt update && sudo apt install libgtk2.0-dev
-        ./configure --enable-gdb-stub --enable-disasm 
+        # ./configure --enable-gdb-stub --enable-disasm 
+        ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
         # ./configure --enable-debugger --enable-disasm
-        make  && (cp bochs ../bochs-gdb & _echo_succ "make bochs sucessfully.") || _echo_err "make bochs unsucessfully.!!!"
+        # ./configure --enable-disasm --enable-debugger --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
+        make  && (cp bochs ./bochsdbg & cp bochs ../bochs-gdb & cp bochs ../../../oslab/bochs/bochs-gdb & _echo_succ "make bochs sucessfully.") || _echo_err "make bochs unsucessfully.!!!"
         else
-        ./configure --enable-gdb-stub --enable-disasm &> /dev/null
-        make &> /dev/null && (cp bochs ../bochs-gdb & _echo_succ "make bochs sucessfully.") || _echo_err "make bochs unsucessfully.!!!"
+        ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
+        make  && (cp bochs ./bochsdbg & cp bochs ../bochs-gdb & cp bochs ../../../oslab/bochs/bochs-gdb & _echo_succ "make bochs sucessfully.") || _echo_err "make bochs unsucessfully.!!!"
         fi
     fi
 
@@ -97,7 +100,7 @@ function onCtrlC () {
     exit
 }
 echo " 须知"
-echo "     请根据oslab/README.txt中的第2点，修改下载的bochs-2.6.9源码，并重新执行该脚本"
+echo "     请根据oslab/README.txt中的第2点，修改下载的bochs-2.2.6源码，并重新执行该脚本"
 echo "脚本将完成以下两件事："
 echo "     1. 为系统安装相应的编译环境（make，bin86，gcc-3.4，gcc-multilib）"
 echo "     2. 在脚本当前目录生成一个bochs-gdb（若没有生成,使用./setup.sh -d 重新执行脚本）"
