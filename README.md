@@ -1,5 +1,11 @@
 # OS大作业（救救共享）
 
+克隆该仓库：
+
+```shell
+git clone https://gitcode.com/M0rtzz/zzu-cs-os-design.git
+```
+
 ## 第一题
 
 ### ①准备
@@ -633,24 +639,12 @@ make all
 
 ## 第四题
 
-安装编译工具链：
+### ①源码编译安装gdb版Bochs（x86模拟器）
+
+因不想使用`linux/src/code/setup.sh`中的`aptitude`工具（此工具一般用于解决依赖问题，它会`autoremove`系统中的软件包），但此系统使用`apt`安装时没有遇见依赖问题，所以我将它换成了`apt`：
 
 ```shell
-sudo apt install bin86 gcc-multilib
-```
-
-### ①下载内核源码
-
-```shell
-git clone https://kkgithub.com/JackeyLea/Linux-0.12.git linux-0.12
-```
-
-### ②源码编译安装gdb版Bochs（x86模拟器）
-
-因不想使用`src/code/setup.sh`中的`aptitude`工具（此工具一般用于解决依赖问题，它会`autoremove`系统中的软件包），但此系统使用`apt`安装时没有遇见依赖问题，所以我将它换成了`apt`：
-
-```shell
-# @file: src/code/setup.sh
+# @file: linux/src/code/setup.sh
 # @line: 80
 sudo apt update && sudo apt install libgtk2.0-dev
 ```
@@ -658,17 +652,40 @@ sudo apt update && sudo apt install libgtk2.0-dev
 ![image-20240501200457967](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/20:04:58_image-20240501200457967.png)
 
 ```shell
-cd src/code/
-./setup.sh
-# ./setup.sh会提示你先修改Bochs源码（oslab/bochs-2.6.9/gdbstub.cc）在运行此脚本，修改方法在 `oslab/README.txt`，按照要求修改即可
+cd linux/src/code/
 ./setup.sh
 ```
 
-![image-20240501182018408](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/18:20:23_image-20240501182018408.png)
+>   [!NOTE]
+>
+>   以下为最后运行Bochs时出现BUG后经过code spelunking后解决问题的过程【本仓库上传的源码鄙人已解决BUG:)】：
+>
+>   1）`linux/src/code//bochs-2.2.6/gdbstub.cc`：
+>
+>   ```c
+>   // @line: 492-494
+>   else if (last_stop_reason == GDBSTUB_STOP_NO_REASON) 
+>   {
+>       write_signal(&buf[1], SIGSEGV);
+>   }
+>   ```
+>
+>   ![image-20240501191958475](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:20:03_image-20240501191958475.png)
+>
+>   2）`linux/src/code/bochs-2.2.6/cpu/cpu.cc`：
+>
+>   ```c
+>   // @line: 143-147
+>   // #if BX_GDBSTUB
+>   //     if (bx_dbg.gdbstub_enabled) {
+>   //       return;
+>   //     }
+>   // #endif
+>   ```
+>
+>   ![image-20240504232505169](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:25:05_image-20240504232505169.png)
 
-![image-20240501191958475](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:20:03_image-20240501191958475.png)
-
-### ③改写内核源码（`linux-0.12/`）
+### ②改写内核源码过程（`linux/linux-0.12/`）
 
 #### 1）`include/unistd.h`
 
@@ -822,7 +839,7 @@ m0rtzz.s m0rtzz.o: m0rtzz.c ../include/asm/segment.h ../include/string.h ../incl
 
 ![image-20240501001113260](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/00:11:13_image-20240501001113260.png)
 
-### ④编译linux-0.12
+### ③编译linux-0.12
 
 ```shell
 cd oslab/
@@ -860,10 +877,10 @@ fi
 ./run.sh -m # 编译内核源码
 ```
 
-### ⑤编写代码
+### ④编写代码
 
 ```shell
-cd oslab/
+cd linux/oslab/
 touch {mount.sh, umount.sh}
 ```
 
@@ -1000,39 +1017,40 @@ clean:
 	rm -f *.out
 ```
 
-### ⑥进入linux-0.12编译并运行代码
+### ⑤进入linux-0.12编译并运行代码
+
+#### 1）以普通模式进入linux-0.12
 
 ```shell
-cd oslab/
+cd linux/oslab/
+./run.sh # 以普通模式进入linux-0.12
+```
+
+进入系统之后输入基础命令发现正常使用，无BUG：
+
+![image-20240504233238756](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:32:39_image-20240504233238756.png)
+
+#### 2）以gdb模式进入linux-0.12
+
+```shell
+cd linux/oslab/
 ./run.sh -g # 以gdb模式进入linux-0.12
 ```
 
-一开始模拟器黑屏，我们需要在终端按`c`键（continue）并回车进入文件系统：
+一开始本地终端进入gdb模式但模拟器终端没有进入文件系统：
 
-![image-20240501194832926](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:48:33_image-20240501194832926.png)
+![image-20240504233607881](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:36:08_image-20240504233607881.png)
 
-![image-20240501194901471](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:49:01_image-20240501194901471.png)
+我们需要在本地终端按`c`键（continue）并回车进入文件系统后就可以正常使用命令了：
 
-或者是这种情况（本地终端没有进入gdb模式且模拟器终端没有进入文件系统）：
-
-![image-20240502145711369](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/14:57:11_image-20240502145711369.png)
-
-这种情况在模拟器中输入`c`键（此时本地终端进入gdb模式），再在本地终端输出`c`键并回车即可：
-
-模拟器中输入`c`键后，本地终端进入gdb模式：
-
-![image-20240502145955978](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/14:59:56_image-20240502145955978.png)
-
-再在本地终端输出`c`键并回车后成功进入文件系统：
-
-![image-20240502150032071](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/15:00:32_image-20240502150032071.png)
+![image-20240504233933109](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:39:33_image-20240504233933109.png)
 
 ```shell
 ls
-make all # make的时候如果卡住不动可以在本地终端再输入 `c` 键并回车
+make all
 ```
 
-![image-20240501194939203](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:49:39_image-20240501194939203.png)
+![image-20240504234631329](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:46:31_image-20240504234631329.png)
 
 ```shell
 ./m0rtzz_1.out str
@@ -1041,13 +1059,23 @@ make all # make的时候如果卡住不动可以在本地终端再输入 `c` 键
 
 ![image-20240501195322602](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:53:22_image-20240501195322602.png)
 
-### ⑦退出linux-0.12
+### ⑥退出linux-0.12
 
-在本地终端输入 `ctrl + c` 后输入 `q` 键并回车即可退出模拟器：
+#### 1）普通模式退出linux-0.12
 
-![image-20240501195904170](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:59:04_image-20240501195904170.png)
+直接点击模拟器终端右上角的 ` ×`即可退出：
 
-### ⑧卸载文件系统
+![image-20240504234359735](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:43:59_image-20240504234359735.png)
+
+#### 2）gdb模式退出linux-0.12
+
+点击模拟器终端右上角的 ` ×` 后在本地终端输入 `q` 键并回车即可退出：
+
+![image-20240504234037176](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:40:37_image-20240504234037176.png)
+
+![image-20240504234216598](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:42:16_image-20240504234216598.png)
+
+### ⑦卸载文件系统
 
 ```shell
 sudo chmod +x umount.sh
