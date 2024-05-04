@@ -86,10 +86,10 @@ bochs_install(){
         ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
         # ./configure --enable-debugger --enable-disasm
         # ./configure --enable-disasm --enable-debugger --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
-        make  && (cp bochs ./bochsdbg & cp bochs ../bochs-gdb & cp bochs ../../../oslab/bochs/bochs-gdb & _echo_succ "make bochs sucessfully.") || _echo_err "make bochs unsucessfully.!!!"
+        make -j$(nproc) && (cp bochs ./bochsdbg & cp bochs ../bochs-gdb & cp bochs ../../../oslab/bochs/bochs-gdb & _echo_succ "make bochs sucessfully.") || _echo_err "make bochs unsucessfully.!!!"
         else
         ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
-        make  && (cp bochs ./bochsdbg & cp bochs ../bochs-gdb & cp bochs ../../../oslab/bochs/bochs-gdb & _echo_succ "make bochs sucessfully.") || _echo_err "make bochs unsucessfully.!!!"
+        make -j$(nproc) && (cp bochs ./bochsdbg & cp bochs ../bochs-gdb & cp bochs ../../../oslab/bochs/bochs-gdb & _echo_succ "make bochs sucessfully.") || _echo_err "make bochs unsucessfully.!!!"
         fi
     fi
 
