@@ -1,8 +1,7 @@
 #!/usr/bin/sudo /bin/bash
 
-# 如果在编译bochs时遇到libgtk2.0-dev 依赖问题，请手动执行
-#   sudo apt-get install aptitude && sudo aptitude install libgtk2.0-dev
-# 若old-releases.ubuntu.com源下载过慢，可以使用国内源http://mirrors.ustc.edu.cn/ubuntu-old-releases/
+# 如果在编译 bochs 时遇到 libgtk2.0-dev 依赖问题，请手动执行
+# sudo apt update && sudo apt install aptitude && sudo aptitude install libgtk2.0-dev
 
 _echo_info(){
     echo -e "[Info]: ${1}"
