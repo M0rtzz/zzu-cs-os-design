@@ -649,7 +649,7 @@ make all
 
 ![image-20240505001129646](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:05/00:11:29_image-20240505001129646.png)
 
-因不想使用`linux/src/code/setup.sh`中的`aptitude`工具（此工具一般用于解决依赖问题，它会`autoremove`系统中的软件包），但此系统使用`apt`安装时没有遇见依赖问题，所以我将它换成了`apt`：
+因不想使用官方推荐的`aptitude`工具（此工具一般用于解决依赖问题，它会`autoremove`系统中的软件包），但此系统使用`apt`安装时没有遇见依赖问题，所以我还是使用了`apt`：
 
 ```shell
 # @file: linux/src/code/setup.sh
@@ -671,10 +671,11 @@ cd linux/src/code/
 >   1）`linux/src/code//bochs-2.2.6/gdbstub.cc`：
 >
 >   ```c
+>   // @brief: add
 >   // @line: 492-494
 >   else if (last_stop_reason == GDBSTUB_STOP_NO_REASON) 
 >   {
->       write_signal(&buf[1], SIGSEGV);
+>      write_signal(&buf[1], SIGSEGV);
 >   }
 >   ```
 >
@@ -683,6 +684,7 @@ cd linux/src/code/
 >   2）`linux/src/code/bochs-2.2.6/cpu/cpu.cc`：
 >
 >   ```c
+>   // @brief: comment
 >   // @line: 143-147
 >   // #if BX_GDBSTUB
 >   //     if (bx_dbg.gdbstub_enabled) {
@@ -698,6 +700,7 @@ cd linux/src/code/
 #### 1）`include/unistd.h`
 
 ```c
+// @brief: add
 // @line: 149，150
 #define __NR_m0rtzz 87
 #define __NR_ashore 88
@@ -708,6 +711,7 @@ cd linux/src/code/
 #### 2）`include/linux/sys.h`
 
 ```c
+// @brief: add
 // @line: 92
 extern int sys_m0rtzz();
 extern int sys_ashore();
@@ -735,6 +739,7 @@ sys_lstat, sys_readlink, sys_uselib, sys_m0rtzz, sys_ashore};
 ####  4）`kernel/ststem_call.s`
 
 ```assembly
+# @brief: change
 # @line: 63
 nr_system_calls = 84
 ```
@@ -832,6 +837,7 @@ int sys_ashore(char *str, unsigned int size)
 #### 6）`kernel/Makefile`
 
 ```makefile
+# @brief: add
 # @line: 29
 OBJS  = sched.o sys_call.o traps.o asm.o fork.o \
 	panic.o printk.o vsprintf.o sys.o exit.o \
@@ -841,6 +847,7 @@ OBJS  = sched.o sys_call.o traps.o asm.o fork.o \
 ![image-20240430214043735](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:04/Day:30/21:40:43_image-20240430214043735.png)
 
 ```makefile
+# @brief: add
 # @line: 48
 m0rtzz.s m0rtzz.o: m0rtzz.c ../include/asm/segment.h ../include/string.h ../include/errno.h
 ```
@@ -850,7 +857,7 @@ m0rtzz.s m0rtzz.o: m0rtzz.c ../include/asm/segment.h ../include/string.h ../incl
 ### ③编译linux-0.12
 
 ```shell
-cd oslab/
+cd linux/oslab/
 code run.sh # 修改脚本
 ```
 
@@ -889,7 +896,7 @@ fi
 
 ```shell
 cd linux/oslab/
-touch {mount.sh, umount.sh}
+touch mount.sh umount.sh
 ```
 
 ```shell
@@ -941,6 +948,7 @@ code hdc/
 ```
 
 ```c
+// @brief: add
 // @file: hdc/usr/include/unistd.h
 // @line: 132，133
 #define __NR_m0rtzz 87
@@ -1010,6 +1018,7 @@ int main()
 ```
 
 ```makefile
+# @brief: add
 # @file: hdc/usr/root/Makefile
 
 CC = gcc
@@ -1072,6 +1081,8 @@ make all
 #### 1）普通模式退出linux-0.12
 
 直接点击模拟器终端右上角的 ` ×`即可退出：
+
+![image-20240505135829132](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images%2FYear%3A2024%2FMonth%3A05%2FDay%3A05%2F13%3A58%3A34_image-20240505135829132.png)
 
 ![image-20240504234359735](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:43:59_image-20240504234359735.png)
 
