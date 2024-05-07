@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# These options should work on Amiga/MorphOS
-#
-
-./configure --with-amigaos --disable-shared --enable-cdrom ${CONFIGURE_ARGS}
