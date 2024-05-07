@@ -134,7 +134,7 @@ cat ./score/sorted_scores.txt
 
 ### ①安装LLVM工具集（使用清华源）及依赖库
 
-**Reference：**[https://mirrors.tuna.tsinghua.edu.cn/help/llvm-apt/](https://mirrors.tuna.tsinghua.edu.cn/help/llvm-apt/)
+**Reference：**[https://mirrors.tuna.tsinghua.edu.cn/help/llvm-apt](https://mirrors.tuna.tsinghua.edu.cn/help/llvm-apt)
 
 ```shell
 wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
