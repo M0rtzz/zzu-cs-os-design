@@ -643,7 +643,7 @@ make all
 
 ### ①源码编译安装gdb版Bochs（x86模拟器）
 
-安装版本为Bochs-2.2.6，原因是：
+安装版本为Bochs-2.2.5，原因是：
 
 [*https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST*](https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST)
 
@@ -653,11 +653,12 @@ make all
 
 ```shell
 # @file: linux/src/code/setup.sh
-# @line: 80
+# @brief: comment and rewrite
+# @line: 98，99
 sudo apt update && sudo apt install libgtk2.0-dev
 ```
 
-![image-20240501200457967](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/20:04:58_image-20240501200457967.png)
+![image-20240507200336319](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:03:36_image-20240507200336319.png)
 
 ```shell
 cd linux/src/code/
@@ -666,26 +667,43 @@ cd linux/src/code/
 
 >   [!NOTE]
 >
->   以下为最后运行Bochs时出现BUG后经过code spelunking后解决问题的过程【本仓库上传的源码鄙人已解决BUG:)】：
+>   以下为编译和最后运行Bochs时出现BUG后经过code spelunking后解决问题的过程【本仓库上传的源码鄙人已解决BUG:)】：
 >
->   1）`linux/src/code//bochs-2.2.6/gdbstub.cc`：
+>   1）`linux/src/code/setup.sh`：
+>
+>   ```shell
+>   # @brief: add
+>   # @line: 90-96
+>   
+>   # 添加 `-fpermissive` 以防编译报错
+>   sed -i 's/CFLAGS="-g -O2"/CFLAGS="-g -O2 -fpermissive"/g' ./configure
+>   sed -i 's/CFLAGS="-g"/CFLAGS="-g -fpermissive"/g' ./configure
+>   sed -i 's/CFLAGS="-O2"/CFLAGS="-O2 -fpermissive"/g' ./configure
+>   sed -i 's/CXXFLAGS="-g -O2"/CXXFLAGS="-g -O2 -fpermissive"/g' ./configure
+>   sed -i 's/CXXFLAGS="-g"/CXXFLAGS="-g -fpermissive"/g' ./configure
+>   sed -i 's/CXXFLAGS="-O2"/CXXFLAGS="-O2 -fpermissive"/g' ./configure
+>   ```
+>
+>   ![image-20240507202101733](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:21:01_image-20240507202101733.png)
+>
+>   2）`linux/src/code//bochs-2.2.5/gdbstub.cc`：
 >
 >   ```c
 >   // @brief: add
->   // @line: 492-494
+>   // @line: 474-476
 >   else if (last_stop_reason == GDBSTUB_STOP_NO_REASON) 
 >   {
->      write_signal(&buf[1], SIGSEGV);
+>     write_signal(&buf[1], SIGSEGV);
 >   }
 >   ```
 >
->   ![image-20240501191958475](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:20:03_image-20240501191958475.png)
+>   ![image-20240507190453389](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/19:04:58_image-20240507190453389.png)
 >
->   2）`linux/src/code/bochs-2.2.6/cpu/cpu.cc`：
+>   3）`linux/src/code/bochs-2.2.5/cpu/cpu.cc`：
 >
 >   ```c
 >   // @brief: comment
->   // @line: 143-147
+>   // @line: 142-146
 >   // #if BX_GDBSTUB
 >   //     if (bx_dbg.gdbstub_enabled) {
 >   //       return;
@@ -693,7 +711,24 @@ cd linux/src/code/
 >   // #endif
 >   ```
 >
->   ![image-20240505000834056](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:05/00:08:34_image-20240505000834056.png)
+>   ![image-20240507190658110](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/19:06:58_image-20240507190658110.png)
+>
+>   4）`linux/src/code/bochs-2.2.5/iodev/hdimage.h`：
+>
+>   ```c
+>   // @brief: comment
+>   // @line: 277，282
+>   #ifndef PARANOID
+>         //  sparse_image_t::
+>   #endif
+>                          get_physical_offset();
+>    void
+>   #ifndef PARANOID
+>         //  sparse_image_t::
+>   #endif
+>   ```
+>
+>   ![image-20240507190835344](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/19:08:35_image-20240507190835344.png)
 
 ### ②改写内核源码过程（`linux/linux-0.12/`）
 
@@ -1046,7 +1081,7 @@ cd linux/oslab/
 
 进入系统之后输入基础命令发现正常使用，无BUG：
 
-![image-20240504233238756](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:32:39_image-20240504233238756.png)
+![image-20240507202342881](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:23:43_image-20240507202342881.png)
 
 #### 2）以gdb模式进入linux-0.12
 
@@ -1057,11 +1092,11 @@ cd linux/oslab/
 
 一开始本地终端进入gdb模式但模拟器终端没有进入文件系统：
 
-![image-20240504233607881](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:36:08_image-20240504233607881.png)
+![image-20240507202509513](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:25:09_image-20240507202509513.png)
 
 我们需要在本地终端按`c`键（continue）并回车进入文件系统后就可以正常使用命令了：
 
-![image-20240504233933109](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:39:33_image-20240504233933109.png)
+![image-20240507202603623](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:26:04_image-20240507202603623.png)
 
 ```shell
 ls
@@ -1081,19 +1116,19 @@ make all
 
 #### 1）普通模式退出linux-0.12
 
-直接点击模拟器终端右上角的 ` ×`即可退出：
+直接点击模拟器终端右上角的` ×`即可退出：
 
-![image-20240505135829132](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images%2FYear%3A2024%2FMonth%3A05%2FDay%3A05%2F13%3A58%3A34_image-20240505135829132.png)
+![image-20240507202415072](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:24:15_image-20240507202415072.png)
 
-![image-20240504234359735](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:43:59_image-20240504234359735.png)
+![image-20240507202429074](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:24:29_image-20240507202429074.png)
 
 #### 2）gdb模式退出linux-0.12
 
-点击模拟器终端右上角的 ` ×` 后在本地终端输入 `q` 键并回车即可退出：
+点击模拟器终端右上角的` ×`后在本地终端输入`q`键并回车即可退出：
 
-![image-20240504234037176](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:40:37_image-20240504234037176.png)
+![image-20240507202931291](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:29:31_image-20240507202931291.png)
 
-![image-20240504234216598](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:42:16_image-20240504234216598.png)
+![image-20240507202959397](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:29:59_image-20240507202959397.png)
 
 ### ⑦卸载文件系统
 
