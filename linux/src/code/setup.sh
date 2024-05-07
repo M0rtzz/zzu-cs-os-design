@@ -12,7 +12,7 @@ _echo_err() {
 }
 
 _echo_succ() {
-    echo -e "\033[32m[Succ]: ${1} \033[0m"
+    echo -e "\033[32m[Success]: ${1} \033[0m"
 }
 
 env_install() {
@@ -68,44 +68,51 @@ bochs_install() {
 
     # INFO:https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST
     # NOTE: M0rtzz have resolved the bug in the source code
-    # if [ ! -e "bochs-2.2.6.tar.gz" ]; then
-    #     # wget https://downloads.sourceforge.net/project/bochs/bochs/2.6.9/bochs-2.2.6.tar.gz -q --show-progress  && \
-    #     wget https://sourceforge.net/projects/bochs/files/bochs/2.6.9/bochs-2.2.6.tar.gz -q --show-progress  && \
-    #     _echo_succ "Download bochs-2.2.6.tar.gz Sucessfully." || (rm bochs-2.2.6.tar.gz & _echo_err "Download bochs-2.2.6.tar.gz unsuccessfully!!!" )
+    # if [ ! -e "bochs-2.2.5.tar.gz" ]; then
+    #     # wget https://downloads.sourceforge.net/project/bochs/bochs/2.6.9/bochs-2.6.9.tar.gz -q --show-progress  && \
+    #     wget https://sourceforge.net/projects/bochs/files/bochs/2.2.5/bochs-2.2.5.tar.gz -q --show-progress  && \
+    #     _echo_succ "Download bochs-2.2.5.tar.gz Sucessfully." || (rm bochs-2.2.5.tar.gz & _echo_err "Download bochs-2.2.5.tar.gz unsuccessfully!!!" )
     # fi
 
-    # if [ ! -d "bochs-2.2.6" ];then
-    #     tar zxvf bochs-2.2.6.tar.gz &> /dev/null && \
-    #     _echo_info "tar bochs-2.2.6.tar.gz Sucessfully." || \
-    #     (rm -rf ../bochs-2.2.6 & _echo_err "tar bochs-2.2.6.tar.gz unsuccessfully!!!" )
+    # if [ ! -d "bochs-2.2.5" ];then
+    #     tar zxvf bochs-2.2.5.tar.gz &> /dev/null && \
+    #     _echo_info "tar bochs-2.2.5.tar.gz Sucessfully." || \
+    #     (rm -rf ../bochs-2.2.5 & _echo_err "tar bochs-2.2.5.tar.gz unsuccessfully!!!" )
     # fi
 
     if [ -d "/usr/local/share/bochs/" ]; then
         sudo rm -rf "/usr/local/share/bochs/"
     fi
 
-    if [ -d "bochs-2.2.6" ]; then
-        cd bochs-2.2.6
+    if [ -d "bochs-2.2.5" ]; then
+        cd bochs-2.2.5
         make clean
+        # 添加 `-fpermissive` 以防编译报错
+        sed -i 's/CFLAGS="-g -O2"/CFLAGS="-g -O2 -fpermissive"/g' ./configure
+        sed -i 's/CFLAGS="-g"/CFLAGS="-g -fpermissive"/g' ./configure
+        sed -i 's/CFLAGS="-O2"/CFLAGS="-O2 -fpermissive"/g' ./configure
+        sed -i 's/CXXFLAGS="-g -O2"/CXXFLAGS="-g -O2 -fpermissive"/g' ./configure
+        sed -i 's/CXXFLAGS="-g"/CXXFLAGS="-g -fpermissive"/g' ./configure
+        sed -i 's/CXXFLAGS="-O2"/CXXFLAGS="-O2 -fpermissive"/g' ./configure
         if [ "$1" ] && [ "$1" = "-d" ]; then
             # sudo apt install aptitude && sudo apt install libgtk2.0-dev
             sudo apt update && sudo apt install libgtk2.0-dev
             # ./configure --enable-gdb-stub --enable-disasm
-            ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
+            ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --enable-show-ips --disable-reset-on-triple-fault --with-all-libs
             # ./configure --enable-debugger --enable-disasm
             # ./configure --enable-disasm --enable-debugger --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
-            make -j$(nproc) && (
+            make -j$(nproc) && sudo chown -R $(who | awk '{print $1}') ../bochs-2.2.5 && (
                 cp bochs ./bochsdbg &
-                cp bochs ../bochs-gdb &
                 cp bochs ../../../oslab/bochs/bochs-gdb &
+                sudo chown -R $(who | awk '{print $1}') ../../../oslab/bochs/bochs-gdb &
                 _echo_succ "make bochs sucessfully."
             ) && sudo make install || _echo_err "make bochs unsucessfully.!!!"
         else
-            ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
-            make -j$(nproc) && (
+            ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --enable-show-ips --disable-reset-on-triple-fault --with-all-libs
+            make -j$(nproc) && sudo chown -R $(who | awk '{print $1}') ../bochs-2.2.5 && (
                 cp bochs ./bochsdbg &
-                cp bochs ../bochs-gdb &
                 cp bochs ../../../oslab/bochs/bochs-gdb &
+                sudo chown -R $(who | awk '{print $1}') ../../../oslab/bochs/bochs-gdb &
                 _echo_succ "make bochs sucessfully."
             ) && sudo make install || _echo_err "make bochs unsucessfully.!!!"
         fi
@@ -122,7 +129,7 @@ function onCtrlC() {
 echo " 须知"
 echo "脚本将完成以下两件事："
 echo "     1. 为系统安装相应的编译环境（make，bin86，gcc-3.4，gcc-multilib）"
-echo "     2. 在脚本当前目录及\${OSLAB_PATH}/bochs/下生成一个bochs-gdb（若没有生成,使用./setup.sh -d 重新执行脚本）并执行sudo make install将bochs可执行文件安装进/usr/local/bin/目录下等安装操作（doc，share，man等等）"
+echo "     2. 在\${OSLAB_PATH}/bochs/下生成一个bochs-gdb（若没有生成,使用./setup.sh -d 重新执行脚本）然后使用sudo make install将bochs可执行文件安装到/usr/local/bin/目录中，同时执行其他安装操作（例如install_doc、install_share、install_man等）"
 
 env_install
 bochs_install $1
