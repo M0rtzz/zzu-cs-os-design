@@ -1101,12 +1101,13 @@ cd linux/oslab/
 ```shell
 ls
 make all
+ls
 ```
 
-![image-20240504234631329](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:04/23:46:31_image-20240504234631329.png)
+![image-20240507212752814](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/21:27:52_image-20240507212752814.png)
 
 ```shell
-./m0rtzz_1.out str
+./m0rtzz_1.out I_am_M0rtzzGod
 ./m0rtzz_2.out
 ```
 
