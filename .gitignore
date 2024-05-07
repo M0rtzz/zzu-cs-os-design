@@ -5,6 +5,7 @@ linux/src/code/bochs-2.2.6/bochsdbg
 linux/src/code/bochs-2.2.6/bochs
 linux/src/code/bochs-gdb
 linux/linux-0.12/**/*.o
+linux/linux-0.12/**/*.a
 linux/linux-0.12/Image
 linux/oslab/bochs/bochs-gdb
 linux/oslab/hdc.img.lock
