@@ -5,5 +5,5 @@ floppya: 1_44="$OSLAB_PATH/Image", status=inserted
 ata0-master: type=disk, path="$OSLAB_PATH/hdc.img", mode=flat, cylinders=204, heads=16, spt=38
 boot: floppy
 log: $OSLAB_PATH/bochsout.txt
-cpu: count=1, ips=4000000
+#cpu: count=1, ips=4000000
 panic: action=ignore
