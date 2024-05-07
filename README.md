@@ -697,6 +697,8 @@ cd linux/src/code/
 
 ### ②改写内核源码过程（`linux/linux-0.12/`）
 
+本仓库中的`linux/linux-0.12`鄙人已修改过源码，未修改过的源码tarball包为`linux/linux-0.12-pure-unmodified.tar.gz`。
+
 #### 1）`include/unistd.h`
 
 ```c
@@ -948,8 +950,8 @@ code hdc/
 ```
 
 ```c
-// @brief: add
 // @file: hdc/usr/include/unistd.h
+// @brief: add
 // @line: 132，133
 #define __NR_m0rtzz 87
 #define __NR_ashore 88
@@ -1018,7 +1020,6 @@ int main()
 ```
 
 ```makefile
-# @brief: add
 # @file: hdc/usr/root/Makefile
 
 CC = gcc
