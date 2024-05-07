@@ -66,7 +66,7 @@ bochs_install() {
 
     sudo apt install -y build-essential &>/dev/null
 
-    # INFO:https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST
+    # INFO: https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST
     # NOTE: M0rtzz have resolved the bug in the source code
     # if [ ! -e "bochs-2.2.5.tar.gz" ]; then
     #     # wget https://downloads.sourceforge.net/project/bochs/bochs/2.6.9/bochs-2.6.9.tar.gz -q --show-progress  && \
