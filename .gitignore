@@ -1,8 +1,8 @@
-linux/src/code/bochs-2.2.6.tar.gz
-linux/src/code/bochs-2.2.6/**/*.o
-linux/src/code/bochs-2.2.6/**/*.a
-linux/src/code/bochs-2.2.6/bochsdbg
-linux/src/code/bochs-2.2.6/bochs
+linux/src/code/bochs-2.2.5.tar.gz
+linux/src/code/bochs-2.2.5/**/*.o
+linux/src/code/bochs-2.2.5/**/*.a
+linux/src/code/bochs-2.2.5/bochsdbg
+linux/src/code/bochs-2.2.5/bochs
 linux/src/code/bochs-gdb
 linux/src/code/dbg.c
 linux/src/docker/
