@@ -4,7 +4,7 @@
 
 ```shell
 git clone https://gitcode.com/M0rtzz/zzu-cs-os-design.git
-cd zzu-cs-os-design
+cd zzu-cs-os-design/
 ```
 
 ## 第一题
