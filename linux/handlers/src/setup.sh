@@ -103,16 +103,16 @@ function bochsInstall() {
             # ./configure --enable-disasm --enable-debugger --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
             make -j$(nproc) && sudo chown -R $(who | awk '{print $1}') ../bochs-2.2.5 && (
                 cp bochs ./bochsdbg &
-                cp bochs ../../../oslab/bochs/bochs-gdb &
-                sudo chown -R $(who | awk '{print $1}') ../../../oslab/bochs/bochs-gdb &
+                cp bochs ../../../tools/bochs/bochs-gdb &
+                sudo chown -R $(who | awk '{print $1}') ../../../tools/bochs/bochs-gdb &
                 _echoSuccess "make bochs sucessfully."
             ) && sudo make install || _echoError "make bochs unsucessfully.!!!"
         else
             ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --enable-show-ips --disable-reset-on-triple-fault --with-all-libs
             make -j$(nproc) && sudo chown -R $(who | awk '{print $1}') ../bochs-2.2.5 && (
                 cp bochs ./bochsdbg &
-                cp bochs ../../../oslab/bochs/bochs-gdb &
-                sudo chown -R $(who | awk '{print $1}') ../../../oslab/bochs/bochs-gdb &
+                cp bochs ../../../tools/bochs/bochs-gdb &
+                sudo chown -R $(who | awk '{print $1}') ../../../tools/bochs/bochs-gdb &
                 _echoSuccess "make bochs sucessfully."
             ) && sudo make install || _echoError "make bochs unsucessfully.!!!"
         fi
@@ -130,7 +130,7 @@ function onCtrlC() {
 echo " 须知"
 echo "脚本将完成以下两件事："
 echo "     1. 为系统安装相应的编译环境（make，bin86，gcc-3.4，gcc-multilib）"
-echo "     2. 在\${OSLAB_PATH}/bochs/下生成一个bochs-gdb（若没有生成,使用./setup.sh -d 重新执行脚本）然后使用sudo make install将bochs可执行文件安装到/usr/local/bin/目录中，同时执行其他安装操作（例如install_doc、install_share、install_man等）"
+echo "     2. 在\${TOOLS_PATH}/bochs/下生成一个bochs-gdb（若没有生成,使用./setup.sh -d 重新执行脚本）然后使用sudo make install将bochs可执行文件安装到/usr/local/bin/目录中，同时执行其他安装操作（例如install_doc、install_share、install_man等）"
 
 envInstall
 bochsInstall $1
