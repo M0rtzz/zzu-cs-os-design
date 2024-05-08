@@ -898,7 +898,7 @@ m0rtzz.s m0rtzz.o: m0rtzz.c ../include/asm/segment.h ../include/string.h ../incl
 ### ③编译linux-0.12
 
 ```shell
-cd linux/oslab/
+cd linux/tools/
 code run.sh # 修改脚本
 ```
 
@@ -936,7 +936,7 @@ fi
 ### ④编写代码
 
 ```shell
-cd linux/oslab/
+cd linux/tools/
 touch mount.sh umount.sh
 ```
 
@@ -980,7 +980,7 @@ sudo chmod +x mount.sh
 ./mount.sh
 ```
 
-![image-20240501192941846](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:29:41_image-20240501192941846.png)
+![image-20240508163314254](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:08/16:33:19_image-20240508163314254.png)
 
 之后需要修改此文件系统下的`/usr/include/unistd.h`并在此系统编写我们的上层C语言代码来调用我们之前编写进内核的系统调用函数：
 
@@ -1079,18 +1079,18 @@ clean:
 #### 1）以普通模式进入linux-0.12
 
 ```shell
-cd linux/oslab/
+cd linux/tools/
 ./run.sh # 以普通模式进入linux-0.12
 ```
 
 进入系统之后输入基础命令发现正常使用，无BUG：
 
-![image-20240507202342881](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:23:43_image-20240507202342881.png)
+![image-20240508163431826](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:08/16:34:32_image-20240508163431826.png)
 
 #### 2）以gdb模式进入linux-0.12
 
 ```shell
-cd linux/oslab/
+cd linux/tools/
 ./run.sh -g # 以gdb模式进入linux-0.12
 ```
 
@@ -1125,7 +1125,7 @@ ls
 
 ![image-20240507202415072](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:24:15_image-20240507202415072.png)
 
-![image-20240507202429074](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:24:29_image-20240507202429074.png)
+![image-20240508163507433](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:08/16:35:07_image-20240508163507433.png)
 
 #### 2）gdb模式退出linux-0.12
 
@@ -1133,7 +1133,7 @@ ls
 
 ![image-20240507202931291](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:29:31_image-20240507202931291.png)
 
-![image-20240507202959397](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:29:59_image-20240507202959397.png)
+![image-20240508163636331](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:08/16:36:36_image-20240508163636331.png)
 
 ### ⑦卸载文件系统
 
@@ -1142,4 +1142,4 @@ sudo chmod +x umount.sh
 ./umount.sh
 ```
 
-![image-20240502195733660](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/19:57:38_image-20240502195733660.png)
+![image-20240508163851746](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:08/16:38:51_image-20240508163851746.png)
