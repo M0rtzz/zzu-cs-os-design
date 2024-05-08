@@ -1104,7 +1104,7 @@ cd linux/tools/
 
 ```shell
 ls
-make all
+make all # gdb模式如果卡住请在本地终端输入`c`键并回车
 ls
 ```
 
@@ -1129,7 +1129,7 @@ ls
 
 #### 2）gdb模式退出linux-0.12
 
-点击模拟器终端右上角的` ×`后在本地终端输入`q`键并回车即可退出：
+点击模拟器终端右上角的`×`后在本地终端输入`q`键并回车即可退出：
 
 ![image-20240507202931291](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:29:31_image-20240507202931291.png)
 
