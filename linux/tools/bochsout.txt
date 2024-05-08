@@ -1,0 +1,325 @@
+00000000000i[     ] Bochs x86 Emulator 2.2.5
+00000000000i[     ]   Build from CVS snapshot on December 30, 2005
+00000000000i[     ] System configuration
+00000000000i[     ]   processors: 1
+00000000000i[     ]   A20 line support: yes
+00000000000i[     ]   APIC support: yes
+00000000000i[     ] CPU configuration
+00000000000i[     ]   level: 6
+00000000000i[     ]   fpu support: yes
+00000000000i[     ]   paging support: yes, tlb enabled: yes
+00000000000i[     ]   mmx support: yes
+00000000000i[     ]   sse support: 2
+00000000000i[     ]   v8086 mode support: yes
+00000000000i[     ]   VME support: no
+00000000000i[     ]   3dnow! support: no
+00000000000i[     ]   PAE support: yes
+00000000000i[     ]   PGE support: yes
+00000000000i[     ]   PSE support: yes
+00000000000i[     ]   x86-64 support: no
+00000000000i[     ]   SEP support: yes
+00000000000i[     ] Optimization configuration
+00000000000i[     ]   Guest2HostTLB support: yes
+00000000000i[     ]   RepeatSpeedups support: yes
+00000000000i[     ]   Icache support: yes
+00000000000i[     ]   Host Asm support: yes
+00000000000i[     ]   Fast function calls: yes
+00000000000i[     ] Devices configuration
+00000000000i[     ]   NE2000 support: no
+00000000000i[     ]   PCI support: no
+00000000000i[     ]   SB16 support: no
+00000000000i[     ]   USB support: no
+00000000000i[     ]   VGA extension support:  
+00000000000i[MEM0 ] allocated memory at 0x7f44c3d51010. after alignment, vector=0x7f44c3d52000
+00000000000i[MEM0 ] 32.00MB
+00000000000e[MEM0 ] ROM: checksum error in BIOS image: './bochs/BIOS-bochs-latest'
+00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('./bochs/BIOS-bochs-latest')
+00000000000i[MEM0 ] rom at 0xc0000/41472 ('./bochs/VGABIOS-lgpl-latest')
+00000000000i[APIC?] local apic in  initializing
+00000000000i[APIC?] set APIC ID to 0
+00000000000i[APIC0] 80686
+00000000000i[APIC0] local apic in CPU apicid=00 initializing
+00000000000i[IOAP ] initializing I/O APIC
+00000000000i[IOAP ] set APIC ID to 1
+00000000000i[CMOS ] Using local time for initial clock
+00000000000i[CMOS ] Setting initial clock to: Wed May  8 14:48:40 2024 (time0=1715150920)
+00000000000i[DMA  ] channel 4 used by cascade
+00000000000i[DMA  ] channel 2 used by Floppy Drive
+00000000000i[FDD  ] fd0: './Image' ro=0, h=2,t=80,spt=18
+00000000000i[XGUI ] test_alloc_colors: 16 colors available out of 16 colors tried
+00000000000i[XGUI ] font 8 wide x 16 high, display depth = 24
+00000000000i[VGA  ] interval=40000
+00000000000i[     ] init_mem of 'harddrv' plugin device by virtual method
+00000000000i[     ] init_mem of 'keyboard' plugin device by virtual method
+00000000000i[     ] init_mem of 'serial' plugin device by virtual method
+00000000000i[     ] init_mem of 'parallel' plugin device by virtual method
+00000000000i[     ] init_mem of 'extfpuirq' plugin device by virtual method
+00000000000i[     ] init_mem of 'speaker' plugin device by virtual method
+00000000000i[     ] init_dev of 'harddrv' plugin device by virtual method
+00000000000i[HD   ] HD on ata0-0: './hdc.img' 'flat' mode 
+00000000000i[HD   ] translation on ata0-0 set to 'none'
+00000000000i[HD   ] Using boot sequence floppy, none, none
+00000000000i[HD   ] Floppy boot signature check is enabled
+00000000000i[     ] init_dev of 'keyboard' plugin device by virtual method
+00000000000i[KBD  ] will paste characters every 1000 keyboard ticks
+00000000000i[     ] init_dev of 'serial' plugin device by virtual method
+00000000000i[SER  ] com1 at 0x03f8 irq 4
+00000000000i[     ] init_dev of 'parallel' plugin device by virtual method
+00000000000i[PAR  ] parallel port 1 at 0x0378 irq 7
+00000000000i[     ] init_dev of 'extfpuirq' plugin device by virtual method
+00000000000i[     ] init_dev of 'speaker' plugin device by virtual method
+00000000000i[SPEAK] Failed to open /dev/console: 资源暂时不可用
+00000000000i[SPEAK] Deactivating beep on console
+00000000000i[     ] reset of 'harddrv' plugin device by virtual method
+00000000000i[     ] reset of 'keyboard' plugin device by virtual method
+00000000000i[     ] reset of 'serial' plugin device by virtual method
+00000000000i[     ] reset of 'parallel' plugin device by virtual method
+00000000000i[     ] reset of 'extfpuirq' plugin device by virtual method
+00000000000i[     ] reset of 'speaker' plugin device by virtual method
+00000000000i[XGUI ] [x] Mouse off
+00000004662i[BIOS ] $Revision: 13073 $ $Date: 2017-02-16 22:43:52 +0100 (Do, 16. Feb 2017) $
+00000080000e[VGA  ] character height = 1, skipping text update
+00000160000e[VGA  ] character height = 1, skipping text update
+00000240000e[VGA  ] character height = 1, skipping text update
+00000317556i[KBD  ] reset-disable command received
+00000319299i[BIOS ] Starting rombios32
+00000319737i[BIOS ] Shutdown flag 0
+00000320000e[VGA  ] character height = 1, skipping text update
+00000320320i[BIOS ] ram_size=0x02000000
+00000320741i[BIOS ] ram_end=32MB
+00000321013i[APIC0] >>WARNING<< returning a mask of 0x0, dest=0 dest_mode=0
+00000321013i[APIC0] >>WARNING<< returning a mask of 0x0, dest=0 dest_mode=0
+00000321013p[APIC0] >>PANIC<< deliver failed for vector 00: no APICs in destination bitmask
+00000321016i[APIC0] >>WARNING<< returning a mask of 0x0, dest=0 dest_mode=0
+00000341233i[BIOS ] Found 1 cpu(s)
+00000354817i[BIOS ] bios_table_addr: 0x000f9cd8 end=0x000fcc00
+00000373274i[BIOS ] bios_table_cur_addr: 0x000f9cd8
+00000400000e[VGA  ] character height = 1, skipping text update
+00000480000e[VGA  ] character height = 1, skipping text update
+00000500891i[VBIOS] VGABios $Id: vgabios.c,v 1.76 2013/02/10 08:07:03 vruppert Exp $
+00000503898i[VBIOS] VBE Bios $Id: vbe.c,v 1.65 2014/07/08 18:02:25 vruppert Exp $
+00000560000i[XGUI ] charmap update. Font Height is 16
+00000640000i[XGUI ] charmap update. Font Height is 16
+00000846925i[BIOS ] ata0-0: PCHS=204/16/38 translation=none LCHS=204/16/38
+00000895141e[HD   ] ata0: device set to 1 which does not exist
+00000895385e[HD   ] ata1: device set to 0 which does not exist
+00000895630e[HD   ] ata1: device set to 1 which does not exist
+00000920116p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00000993827p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00001103679p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00001213529p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00001323381p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00001433231p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00001543083p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00001652933p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00001762783p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00001872635p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00001982485p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00002092461p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00002202187p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00002312039p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00002421889p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00002531741p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00002641591p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00002751441p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00002861293p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00002971143p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00003080995p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00003190845p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00003300821p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00003410547p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00003520399p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00003630249p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00003740101p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00003849951p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00003959801p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00004069653p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00004179503p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00004289355p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00004399205p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00004509181p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00004618907p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00004728759p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00004838609p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00004948459p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00005058311p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00005168161p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00005278013p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00005387863p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00005497715p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00005607565p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00005717541p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00005827267p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00005937117p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00006046969p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00006156819p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00006266671p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00006376521p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00006486373p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00006596223p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00006706075p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00006815925p[CPU0 ] >>PANIC<< HALT instruction encountered in the BIOS ROM
+00007033859i[BIOS ] Booting from 0000:7c00
+00013963007i[FDD  ] partial read() on floppy image returns 193/512
+00013985740i[FDD  ] read() on floppy image returns 0
+00014010203i[FDD  ] read() on floppy image returns 0
+00014032936i[FDD  ] read() on floppy image returns 0
+00014055669i[FDD  ] read() on floppy image returns 0
+00014078402i[FDD  ] read() on floppy image returns 0
+00014101135i[FDD  ] read() on floppy image returns 0
+00014123868i[FDD  ] read() on floppy image returns 0
+00014146601i[FDD  ] read() on floppy image returns 0
+00014169334i[FDD  ] read() on floppy image returns 0
+00014192067i[FDD  ] read() on floppy image returns 0
+00014214800i[FDD  ] read() on floppy image returns 0
+00014237533i[FDD  ] read() on floppy image returns 0
+00014260266i[FDD  ] read() on floppy image returns 0
+00014282999i[FDD  ] read() on floppy image returns 0
+00014305732i[FDD  ] read() on floppy image returns 0
+00014328465i[FDD  ] read() on floppy image returns 0
+00014351198i[FDD  ] read() on floppy image returns 0
+00014373931i[FDD  ] read() on floppy image returns 0
+00014396664i[FDD  ] read() on floppy image returns 0
+00014421128i[FDD  ] read() on floppy image returns 0
+00014443861i[FDD  ] read() on floppy image returns 0
+00014466594i[FDD  ] read() on floppy image returns 0
+00014489327i[FDD  ] read() on floppy image returns 0
+00014512060i[FDD  ] read() on floppy image returns 0
+00014534793i[FDD  ] read() on floppy image returns 0
+00014557526i[FDD  ] read() on floppy image returns 0
+00014580259i[FDD  ] read() on floppy image returns 0
+00014602992i[FDD  ] read() on floppy image returns 0
+00014625725i[FDD  ] read() on floppy image returns 0
+00014648458i[FDD  ] read() on floppy image returns 0
+00014671191i[FDD  ] read() on floppy image returns 0
+00014693924i[FDD  ] read() on floppy image returns 0
+00014716657i[FDD  ] read() on floppy image returns 0
+00014739390i[FDD  ] read() on floppy image returns 0
+00014762123i[FDD  ] read() on floppy image returns 0
+00014784856i[FDD  ] read() on floppy image returns 0
+00014807589i[FDD  ] read() on floppy image returns 0
+00014832059i[FDD  ] read() on floppy image returns 0
+00014854792i[FDD  ] read() on floppy image returns 0
+00014877525i[FDD  ] read() on floppy image returns 0
+00014900258i[FDD  ] read() on floppy image returns 0
+00014922991i[FDD  ] read() on floppy image returns 0
+00014945724i[FDD  ] read() on floppy image returns 0
+00014968457i[FDD  ] read() on floppy image returns 0
+00014991190i[FDD  ] read() on floppy image returns 0
+00015013923i[FDD  ] read() on floppy image returns 0
+00015036656i[FDD  ] read() on floppy image returns 0
+00015059389i[FDD  ] read() on floppy image returns 0
+00015082122i[FDD  ] read() on floppy image returns 0
+00015104855i[FDD  ] read() on floppy image returns 0
+00015127588i[FDD  ] read() on floppy image returns 0
+00015150321i[FDD  ] read() on floppy image returns 0
+00015173054i[FDD  ] read() on floppy image returns 0
+00015195787i[FDD  ] read() on floppy image returns 0
+00015218520i[FDD  ] read() on floppy image returns 0
+00015242984i[FDD  ] read() on floppy image returns 0
+00015265717i[FDD  ] read() on floppy image returns 0
+00015288450i[FDD  ] read() on floppy image returns 0
+00015311183i[FDD  ] read() on floppy image returns 0
+00015333916i[FDD  ] read() on floppy image returns 0
+00015356649i[FDD  ] read() on floppy image returns 0
+00015379382i[FDD  ] read() on floppy image returns 0
+00015402115i[FDD  ] read() on floppy image returns 0
+00015424848i[FDD  ] read() on floppy image returns 0
+00015447581i[FDD  ] read() on floppy image returns 0
+00015470314i[FDD  ] read() on floppy image returns 0
+00015493047i[FDD  ] read() on floppy image returns 0
+00015515780i[FDD  ] read() on floppy image returns 0
+00015538513i[FDD  ] read() on floppy image returns 0
+00015561246i[FDD  ] read() on floppy image returns 0
+00015583979i[FDD  ] read() on floppy image returns 0
+00015606712i[FDD  ] read() on floppy image returns 0
+00015629445i[FDD  ] read() on floppy image returns 0
+00015653912i[FDD  ] read() on floppy image returns 0
+00015676645i[FDD  ] read() on floppy image returns 0
+00015699378i[FDD  ] read() on floppy image returns 0
+00015722111i[FDD  ] read() on floppy image returns 0
+00015744844i[FDD  ] read() on floppy image returns 0
+00015767577i[FDD  ] read() on floppy image returns 0
+00015790310i[FDD  ] read() on floppy image returns 0
+00015813043i[FDD  ] read() on floppy image returns 0
+00015835776i[FDD  ] read() on floppy image returns 0
+00015858509i[FDD  ] read() on floppy image returns 0
+00015881242i[FDD  ] read() on floppy image returns 0
+00016170002i[BIOS ] int13_harddisk: function 15, unmapped device for ELDL=81
+00056756803i[XGUI ] ips = 56756803
+00098274740i[XGUI ] ips = 41517937
+00139899806i[XGUI ] ips = 41625066
+00140524438i[XGUI ] X11 Beep ON (frequency=inf)
+00140763007i[XGUI ] X11 Beep OFF
+00140763007i[PIT81] Changing GATE 2 to: 0
+00141664456i[XGUI ] X11 Beep ON (frequency=749.96)
+00141664456i[PIT81] Changing GATE 2 to: 1
+00141903025i[XGUI ] X11 Beep OFF
+00141903025i[PIT81] Changing GATE 2 to: 0
+00143044478i[XGUI ] X11 Beep ON (frequency=749.96)
+00143044478i[PIT81] Changing GATE 2 to: 1
+00143283047i[XGUI ] X11 Beep OFF
+00143283047i[PIT81] Changing GATE 2 to: 0
+00144184496i[XGUI ] X11 Beep ON (frequency=749.96)
+00144184496i[PIT81] Changing GATE 2 to: 1
+00144423065i[XGUI ] X11 Beep OFF
+00144423065i[PIT81] Changing GATE 2 to: 0
+00145444516i[XGUI ] X11 Beep ON (frequency=749.96)
+00145444516i[PIT81] Changing GATE 2 to: 1
+00145683085i[XGUI ] X11 Beep OFF
+00145683085i[PIT81] Changing GATE 2 to: 0
+00146524534i[XGUI ] X11 Beep ON (frequency=749.96)
+00146524534i[PIT81] Changing GATE 2 to: 1
+00146763103i[XGUI ] X11 Beep OFF
+00146763103i[PIT81] Changing GATE 2 to: 0
+00147684552i[XGUI ] X11 Beep ON (frequency=749.96)
+00147684552i[PIT81] Changing GATE 2 to: 1
+00147923121i[XGUI ] X11 Beep OFF
+00147923121i[PIT81] Changing GATE 2 to: 0
+00149084574i[XGUI ] X11 Beep ON (frequency=749.96)
+00149084574i[PIT81] Changing GATE 2 to: 1
+00149246526i[XGUI ] X11 Beep ON (frequency=749.96)
+00149246530i[XGUI ] X11 Beep ON (frequency=749.96)
+00149323142i[XGUI ] X11 Beep OFF
+00149323142i[PIT81] Changing GATE 2 to: 0
+00181242891i[XGUI ] ips = 41343085
+00221795113i[XGUI ] ips = 40552222
+00262180965i[XGUI ] ips = 40385852
+00303124004i[XGUI ] ips = 40943039
+00304787054i[XGUI ] X11 Beep ON (frequency=749.96)
+00304787054i[PIT81] Changing GATE 2 to: 1
+00305025623i[XGUI ] X11 Beep OFF
+00305025623i[PIT81] Changing GATE 2 to: 0
+00343988515i[XGUI ] ips = 40864511
+00384688295i[XGUI ] ips = 40699780
+00425877344i[XGUI ] ips = 41189049
+00446546613i[XGUI ] X11 Beep ON (frequency=749.96)
+00446546613i[PIT81] Changing GATE 2 to: 1
+00446767878i[XGUI ] X11 Beep OFF
+00446767878i[PIT81] Changing GATE 2 to: 0
+00466977296i[XGUI ] ips = 41099952
+00507805919i[XGUI ] ips = 40828623
+00523052857i[XGUI ] X11 Beep ON (frequency=749.96)
+00523052857i[PIT81] Changing GATE 2 to: 1
+00523289096i[XGUI ] X11 Beep OFF
+00523289096i[PIT81] Changing GATE 2 to: 0
+00549154258i[XGUI ] ips = 41348339
+00590155890i[XGUI ] ips = 41001632
+00631201168i[XGUI ] ips = 41045278
+00671897225i[XGUI ] ips = 40696057
+00712728109i[XGUI ] ips = 40830884
+00753559617i[XGUI ] ips = 40831508
+00756680266i[XGUI ] X11 Beep ON (frequency=749.96)
+00756680266i[PIT81] Changing GATE 2 to: 1
+00756912819i[XGUI ] X11 Beep OFF
+00756912819i[PIT81] Changing GATE 2 to: 0
+00794483339i[XGUI ] ips = 40923722
+00804259561i[XGUI ] X11 Beep ON (frequency=749.96)
+00804259561i[PIT81] Changing GATE 2 to: 1
+00804493574i[XGUI ] X11 Beep OFF
+00804493574i[PIT81] Changing GATE 2 to: 0
+00835479340i[XGUI ] ips = 40996001
+00876297532i[XGUI ] ips = 40818192
+00916847680i[XGUI ] ips = 40550148
+00957721913i[XGUI ] ips = 40874233
+00998421844i[XGUI ] ips = 40699931

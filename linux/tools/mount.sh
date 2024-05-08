@@ -13,5 +13,5 @@ if [ ! -d "${mount_folder}" ]; then
     mkdir "${mount_folder}"
 fi
 
-export OSLAB_PATH=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
-mount -t minix -o loop,offset=1024 ${OSLAB_PATH}/hdc.img ${OSLAB_PATH}/hdc
+export TOOLS_PATH=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
+mount -t minix -o loop,offset=1024 ${TOOLS_PATH}/hdc.img ${TOOLS_PATH}/hdc
