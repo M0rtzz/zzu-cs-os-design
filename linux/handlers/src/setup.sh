@@ -127,10 +127,10 @@ function onCtrlC() {
     exit
 }
 
-echo " 须知"
+echo "须知"
 echo "脚本将完成以下两件事："
-echo "     1. 为系统安装相应的编译环境（make，bin86，gcc-3.4，gcc-multilib）"
-echo "     2. 在\${TOOLS_PATH}/bochs/下生成一个bochs-gdb（若没有生成,使用./setup.sh -d 重新执行脚本）然后使用sudo make install将bochs可执行文件安装到/usr/local/bin/目录中，同时执行其他安装操作（例如install_doc、install_share、install_man等）"
+echo "    1. 为系统安装相应的编译环境（make，bin86，gcc-3.4，gcc-multilib）"
+echo "    2. 在\${TOOLS_PATH}/bochs/下生成一个bochs-gdb（若没有生成,使用./setup.sh -d重新执行脚本）然后使用sudo make install将bochs可执行文件安装到/usr/local/bin/目录中，同时执行其他安装操作（例如install_doc、install_share、install_man等）"
 
 envInstall
 bochsInstall $1
