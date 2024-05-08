@@ -37,6 +37,7 @@ function envInstall() {
 
     if [ -z $(which gcc-3.4) ]; then
         _echoInfo "Start installing gcc-3.4..."
+
         for deb in ${DOWNLOAD_LIST[*]}; do
             if [ ! -e ${GCC_DIR}/${deb} ]; then
                 # wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/gcc-3.4/${deb} -P ${GCC_DIR} -q --show-progress && \
@@ -48,6 +49,7 @@ function envInstall() {
                 )
             fi
         done
+
         sudo dpkg -i ${GCC_DIR}/*.deb &>/dev/null
         sudo apt install -y -f &>/dev/null
         if [ ! -z $(which gcc-3.4) ]; then
