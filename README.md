@@ -7,6 +7,10 @@ git clone https://gitcode.com/M0rtzz/zzu-cs-os-design.git
 cd zzu-cs-os-design/
 ```
 
+>   [!IMPORTANT]
+>
+>   该仓库部分Shell脚本的`shebang`设置的是`/bin/zsh`，未安装`z-shell`的请自行改为`/bin/bash`。
+
 ## 第一题
 
 ### ①准备
