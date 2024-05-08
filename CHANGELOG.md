@@ -1,16 +1,11 @@
-# Changelog
-
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
-
-## [1.5.1](https://gitcode.com/M0rtzz/zzu-cs-os-design/compare/v1.1.8...v1.5.1) (2024-05-08)
-
-## 1.5.0 (2024-05-08)
+## <small>1.5.1 (2024-05-08)</small>
 
 * ⚡️ perf(setup.sh): change download url to mirror station ([e25fc90](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/e25fc90))
 * ⚡️ perf(setup.sh): change download url to mirror station ([ec8311d](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/ec8311d))
 * ➕ add_dep: add bochs-2.2.6 src code ([5fee0b1](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/5fee0b1))
 * ➕ add_dep(bochs-2.2.5): add bochs-2.2.5 ([2c7a332](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/2c7a332))
 * ➖ rm_dep(bochs-2.2.6): rm bochs-2.2.6 ([092b443](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/092b443))
+* 🎨 style(setup.sh): format ([518ecac](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/518ecac))
 * 🐛 fix: m0rtzz have resolved the bug in the source code ([25dcdff](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/25dcdff))
 * 🐛 fix(cpu.cc): fix bug ([f4d0598](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/f4d0598))
 * 🐛 fix(cpu.cc): fix bug ([d1cb818](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/d1cb818))
@@ -35,6 +30,7 @@ All notable changes to this project will be documented in this file. See [commit
 * 📝 docs: update doc ([97b551e](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/97b551e))
 * 📝 docs: update doc ([581752e](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/581752e))
 * 📝 docs: update doc file ([987c6c3](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/987c6c3))
+* 📝 docs(CHANGELOG.md): automatic update ([c596669](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/c596669))
 * 📝 docs(CHANGELOG.md): automatic update ([e06aafc](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/e06aafc))
 * 📝 docs(CHANGELOG.md): automatic update ([3cee25e](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/3cee25e))
 * 📝 docs(CHANGELOG.md): automatic update ([dda3db4](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/dda3db4))
@@ -100,7 +96,8 @@ All notable changes to this project will be documented in this file. See [commit
 * 🔖 tag(package.json): 1.4.7 ([9ffabcc](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/9ffabcc))
 * 🔖 tag(package.json): 1.4.8 ([f0a2ea6](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/f0a2ea6))
 * 🔖 tag(package.json): 1.4.9 ([4de6f2d](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/4de6f2d))
-* 🔖 tag(package.json): 1.5.0 ([6b30851](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/6b30851))
+* 🔖 tag(package.json): 1.5.0 ([147fe16](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/147fe16))
+* 🔖 tag(package.json): 1.5.1 ([79aea38](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/79aea38))
 * 🔥 remove: rm exe file ([183d4d1](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/183d4d1))
 * 🔥 remove: rm log file ([bc22446](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/bc22446))
 * 🔥 remove: rm unused dir ([42b4dfd](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/42b4dfd))
@@ -108,7 +105,6 @@ All notable changes to this project will be documented in this file. See [commit
 * 🔥 remove: rm unused file ([5e1530e](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/5e1530e))
 * 🔥 remove(dbg.c): rm unused src code file ([4c6f0fd](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/4c6f0fd))
 * 🔧 config: update run cmd files ([546b326](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/546b326))
-* 🔨 script: format ([a45da15](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/a45da15))
 * 🔨 script(setup.sh): after successful compilation, execute make install ([862808e](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/862808e))
 * 🔨 script(setup.sh): downgrade bochs version ([b7f841d](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/b7f841d))
 * 🔨 script(setup.sh): make clean first ([ee9fa06](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/ee9fa06))
@@ -132,6 +128,7 @@ All notable changes to this project will be documented in this file. See [commit
 * 🙈 ignore(.gitignore): update .gitignore ([353394a](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/353394a))
 * 🚚 move: rename doc file ([26225e6](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/26225e6))
 * 🚚 move(linux-0.12-pure-unmodified.tar.gz): mv unmodified kernel src code path ([08db427](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/08db427))
+* tag(package.json): 1.4.10 ([05d4f88](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/05d4f88))
 
 
 
@@ -282,3 +279,6 @@ All notable changes to this project will be documented in this file. See [commit
 
 * chore(release): 1.0.1 ([d447a9b](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/d447a9b))
 * 🎉 init: init commit ([c7e9e28](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/c7e9e28))
+
+
+
