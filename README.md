@@ -989,7 +989,7 @@ while true; do
             echo -e "\033[1;31m无法卸载文件系统，正在重试...\033[0m"
         fi
     else
-        echo -e "\033[1;36m已杀死占用./hdc的PID：\033[0m${pid_array[@]}"
+        echo -e "\033[1;36m已杀死占用./hdc的进程，PID为：\033[0m${pid_array[@]}"
         sudo kill -9 "${pid_array[@]}"
     fi
     sleep 1
@@ -1165,4 +1165,4 @@ sudo chmod +x umount.sh
 ./umount.sh
 ```
 
-![image-20240509190346700](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:09/19:03:46_image-20240509190346700.png)
+![image-20240509193208475](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images%2FYear%3A2024%2FMonth%3A05%2FDay%3A09%2F19%3A32%3A13_image-20240509193208475.png)
