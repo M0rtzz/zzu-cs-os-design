@@ -26,7 +26,7 @@ while true; do
             echo -e "\033[1;31m无法卸载文件系统，正在重试...\033[0m"
         fi
     else
-        echo -e "\033[1;36m已杀死占用./hdc的PID：\033[0m${pid_array[@]}"
+        echo -e "\033[1;36m已杀死占用./hdc的进程，PID为：\033[0m${pid_array[@]}"
         sudo kill -9 "${pid_array[@]}"
     fi
     sleep 1
