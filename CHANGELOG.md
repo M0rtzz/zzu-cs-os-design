@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.11](https://gitcode.com/M0rtzz/zzu-cs-os-design/compare/v1.1.8...v1.2.11) (2024-05-09)
+
 ## [1.2.10](https://gitcode.com/M0rtzz/zzu-cs-os-design/compare/v1.1.8...v1.2.10) (2024-05-09)
 
 ## 1.1.0 (2024-05-02)
