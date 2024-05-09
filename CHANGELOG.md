@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [1.3.1](https://gitcode.com/M0rtzz/zzu-cs-os-design/compare/v1.1.8...v1.3.1) (2024-05-09)
+
 ## 1.3.0 (2024-05-09)
 
 * ⚡️ perf(setup.sh): change download url to mirror station ([e25fc90](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/e25fc90))
@@ -336,6 +342,3 @@
 
 * chore(release): 1.0.1 ([d447a9b](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/d447a9b))
 * 🎉 init: init commit ([c7e9e28](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/c7e9e28))
-
-
-
