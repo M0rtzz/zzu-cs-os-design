@@ -1,10 +1,4 @@
-# Changelog
-
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
-
-## [1.3.1](https://gitcode.com/M0rtzz/zzu-cs-os-design/compare/v1.1.8...v1.3.1) (2024-05-09)
-
-## 1.3.0 (2024-05-09)
+## <small>1.3.1 (2024-05-09)</small>
 
 * ⚡️ perf(setup.sh): change download url to mirror station ([e25fc90](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/e25fc90))
 * ⚡️ perf(setup.sh): change download url to mirror station ([ec8311d](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/ec8311d))
@@ -44,6 +38,7 @@ All notable changes to this project will be documented in this file. See [commit
 * 📝 docs: update doc file ([b968191](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/b968191))
 * 📝 docs: update doc file ([5215840](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/5215840))
 * 📝 docs: update doc file ([987c6c3](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/987c6c3))
+* 📝 docs(CHANGELOG.md): automatic update ([5d3d3ba](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/5d3d3ba))
 * 📝 docs(CHANGELOG.md): automatic update ([dec28b7](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/dec28b7))
 * 📝 docs(CHANGELOG.md): automatic update ([c98ab11](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/c98ab11))
 * 📝 docs(CHANGELOG.md): automatic update ([1cd79e8](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/1cd79e8))
@@ -124,6 +119,7 @@ All notable changes to this project will be documented in this file. See [commit
 * 🔖 tag(package.json): 1.2.9 ([e626a57](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/e626a57))
 * 🔖 tag(package.json): 1.3.0 ([9046a50](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/9046a50))
 * 🔖 tag(package.json): 1.3.0 ([9779f4b](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/9779f4b))
+* 🔖 tag(package.json): 1.3.1 ([a0c6ed5](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/a0c6ed5))
 * 🔖 tag(package.json): 1.3.1 ([cee739d](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/cee739d))
 * 🔖 tag(package.json): 1.3.2 ([dfea6b5](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/dfea6b5))
 * 🔖 tag(package.json): 1.3.3 ([ff8f4c8](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/ff8f4c8))
@@ -342,3 +338,6 @@ All notable changes to this project will be documented in this file. See [commit
 
 * chore(release): 1.0.1 ([d447a9b](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/d447a9b))
 * 🎉 init: init commit ([c7e9e28](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/c7e9e28))
+
+
+
