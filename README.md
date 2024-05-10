@@ -9,7 +9,7 @@ cd zzu-cs-os-design/
 
 >   [!IMPORTANT]
 >
->   该仓库部分Shell脚本的`shebang`设置的是`/bin/zsh`，未安装`z-shell`的请自行改为`/bin/bash`。
+>   该仓库部分Shell脚本的`shebang`设置的Shell解释器是`/bin/zsh`，未安装`z-shell`的请自行改为`/bin/bash`。
 
 ## 第一题
 
