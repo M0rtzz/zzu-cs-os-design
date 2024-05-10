@@ -1,11 +1,12 @@
-# Changelog
+##  (2024-05-10)
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v1.4.1 ([a4a1d4e](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/a4a1d4e))
 
-## [1.4.1](https://gitcode.com/M0rtzz/zzu-cs-os-design/compare/v1.4.0...v1.4.1) (2024-05-10)
+
 
 ## 1.4.0 (2024-05-10)
 
+* 📝 docs(CHANGELOG.md): automatic update ([a6465e6](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/a6465e6))
 * 🔖 tag(package.json): v1.4.0 ([e4fdeae](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/e4fdeae))
 
 
@@ -393,3 +394,6 @@ All notable changes to this project will be documented in this file. See [commit
 
 * chore(release): 1.0.1 ([d447a9b](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/d447a9b))
 * 🎉 init: init commit ([c7e9e28](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/c7e9e28))
+
+
+
