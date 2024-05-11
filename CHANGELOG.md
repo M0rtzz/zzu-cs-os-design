@@ -1,8 +1,78 @@
-# Changelog
+## 1.5.0 (2024-05-11)
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 🔖 tag(package.json): v1.5.0 ([2fbb076](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/2fbb076))
 
-## [1.4.10](https://gitcode.com/M0rtzz/zzu-cs-os-design/compare/v1.4.9...v1.4.10) (2024-05-11)
+
+
+## <small>1.4.9 (2024-05-11)</small>
+
+* 📝 docs: update doc file ([b141341](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/b141341))
+* 📝 docs(CHANGELOG.md): automatic update ([7ff869c](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/7ff869c))
+* 🔖 tag(package.json): v1.4.9 ([2395436](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/2395436))
+
+
+
+## <small>1.4.8 (2024-05-11)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([f4d15a9](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/f4d15a9))
+* 🔖 tag(package.json): v1.4.8 ([5f77988](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/5f77988))
+
+
+
+## <small>1.4.7 (2024-05-11)</small>
+
+* ♻️ refactor(mount.sh): shellcheck ([9687a63](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/9687a63))
+* ♻️ refactor(run.sh): shellcheck ([2729996](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/2729996))
+* ♻️ refactor(score.sh): shellcheck ([1ae589c](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/1ae589c))
+* ♻️ refactor(setup.sh): shellcheck ([5007501](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/5007501))
+* ♻️ refactor(umount.sh): shellcheck ([f51b746](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/f51b746))
+* 📝 docs(CHANGELOG.md): automatic update ([ebeb1ac](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/ebeb1ac))
+* 🔖 tag(package.json): v1.4.7 ([e3e0cf0](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/e3e0cf0))
+
+
+
+## <small>1.4.6 (2024-05-11)</small>
+
+* 📝 docs: update doc file ([ed718f8](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/ed718f8))
+* 📝 docs(CHANGELOG.md): automatic update ([6a4241b](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/6a4241b))
+* 🔖 tag(package.json): v1.4.6 ([cfe8856](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/cfe8856))
+
+
+
+## <small>1.4.5 (2024-05-10)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([992d0ce](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/992d0ce))
+* 🔖 tag(package.json): v1.4.5 ([2fe72af](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/2fe72af))
+
+
+
+## <small>1.4.4 (2024-05-10)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([36d136e](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/36d136e))
+* 🔖 tag(package.json): v1.4.4 ([2764f5d](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/2764f5d))
+
+
+
+## <small>1.4.3 (2024-05-10)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([74d8f00](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/74d8f00))
+* 🔖 tag(package.json): v1.4.3 ([5d77101](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/5d77101))
+
+
+
+## <small>1.4.2 (2024-05-10)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([8ad7e04](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/8ad7e04))
+* 🔖 tag(package.json): v1.4.2 ([87c5a44](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/87c5a44))
+
+
+
+## <small>1.4.1 (2024-05-10)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([47c5941](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/47c5941))
+* 🔖 tag(package.json): v1.4.1 ([a4a1d4e](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/a4a1d4e))
+
+
 
 ## 1.4.0 (2024-05-10)
 
@@ -394,3 +464,6 @@ All notable changes to this project will be documented in this file. See [commit
 
 * chore(release): 1.0.1 ([d447a9b](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/d447a9b))
 * 🎉 init: init commit ([c7e9e28](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/c7e9e28))
+
+
+
