@@ -274,12 +274,12 @@ class sparse_image_t : public device_image_t
  void panic(const char * message);
  off_t
 #ifndef PARANOID
-      //  sparse_image_t::
+      sparse_image_t::
 #endif
                        get_physical_offset();
  void
 #ifndef PARANOID
-      //  sparse_image_t::
+      sparse_image_t::
 #endif
                        set_virtual_page(Bit32u new_virtual_page);
  void read_header();
