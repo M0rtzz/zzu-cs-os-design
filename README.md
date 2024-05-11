@@ -9,7 +9,9 @@ cd zzu-cs-os-design/
 
 >   [!IMPORTANT]
 >
->   该仓库部分Shell脚本的`shebang`设置的Shell解释器是`/bin/zsh`，未安装`z-shell`的请自行改为`/bin/bash`。
+>   该仓库部分Shell脚本的`shebang`设置的Shell解释器是`/bin/zsh`，未安装`z-shell`的请自行改为`/bin/bash`，脚本语法也均通过ShellCheck检查：
+>
+>   ![image-20240511151811940](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/15:18:12_image-20240511151811940.png)
 
 ## 第一题
 
@@ -81,7 +83,7 @@ rm -f ./score/sorted_scores.txt
 # 按分数逆序排序
 {
     for file in ./score/*.txt; do
-        cat "${file}" | awk '{print $1, $4, $5}'
+        awk '{print $1, $4, $5}' "${file}"
         # 文件之间添加换行符
         printf "\n"
     done
@@ -658,11 +660,11 @@ make all
 ```shell
 # @file: linux/handlers/src/setup.sh
 # @brief: comment and rewrite
-# @line: 98，99
+# @line: 110，111
 sudo apt update && sudo apt install libgtk2.0-dev
 ```
 
-![image-20240507200336319](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:03:36_image-20240507200336319.png)
+![image-20240511151152673](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/15:11:57_image-20240511151152673.png)
 
 ```shell
 cd linux/handlers/src/
@@ -677,7 +679,7 @@ cd linux/handlers/src/
 >
 >   ```shell
 >   # @brief: add
->   # @line: 90-96
+>   # @line: 102-108
 >   
 >   # 添加 `-fpermissive` 以防编译报错
 >   sed -i 's/CFLAGS="-g -O2"/CFLAGS="-g -O2 -fpermissive"/g' ./configure
@@ -688,7 +690,7 @@ cd linux/handlers/src/
 >   sed -i 's/CXXFLAGS="-O2"/CXXFLAGS="-O2 -fpermissive"/g' ./configure
 >   ```
 >
->   ![image-20240507202101733](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:21:01_image-20240507202101733.png)
+>   ![image-20240511151226202](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/15:12:26_image-20240511151226202.png)
 >
 >   2）`linux/handlers/src/bochs-2.2.5/gdbstub.cc`：
 >
@@ -911,7 +913,8 @@ if [ -f "${lock_file}" ]; then
     rm "${lock_file}"
 fi
 
-export TOOLS_PATH=$(dirname `which $0`)
+TOOLS_PATH=$(dirname "$(command -v "$0")")
+export TOOLS_PATH
 
 if [ ! -e "hdc.img" ]; then
 tar -xvJf hdc.tar.xz
@@ -919,13 +922,13 @@ fi
 
 if [ "$1" ] && [ "$1" = "-m" ]
 then
-(cd ../linux-0.12; make clean; make; cp Image ../tools/Image)
+(cd ../linux-0.12 || exit; make clean; make; cp Image ../tools/Image)
 elif [ "$1" ] && [ "$1" = "-g" ]
 then
-${TOOLS_PATH}/bochs/bochs-gdb -q -f ${TOOLS_PATH}/bochs/bochsrc-gdb.bxrc & \
-gdb -x ${TOOLS_PATH}/bochs/.gdbrc ../linux-0.12/tools/system
+"${TOOLS_PATH}"/bochs/bochs-gdb -q -f "${TOOLS_PATH}"/bochs/bochsrc-gdb.bxrc & \
+gdb -x "${TOOLS_PATH}"/bochs/.gdbrc ../linux-0.12/tools/system
 else
-bochs -q -f ${TOOLS_PATH}/bochs/bochsrc.bxrc
+bochs -q -f "${TOOLS_PATH}"/bochs/bochsrc.bxrc
 fi
 ```
 
@@ -956,8 +959,9 @@ if [ ! -d "${mount_folder}" ]; then
     mkdir "${mount_folder}"
 fi
 
-export TOOLS_PATH=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
-mount -t minix -o loop,offset=1024 ${TOOLS_PATH}/hdc.img ${TOOLS_PATH}/hdc
+TOOLS_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)
+export TOOLS_PATH
+mount -t minix -o loop,offset=1024 "${TOOLS_PATH}"/hdc.img "${TOOLS_PATH}"/hdc
 ```
 
 ```shell
@@ -978,10 +982,10 @@ while true; do
 
     while IFS= read -r pid; do
         pid_array+=("${pid}")
-    done < <(lsof ${hdc_path} | awk '$2 != "PID" {print $2}')
+    done < <(lsof "${hdc_path}" | awk '$2 != "PID" {print $2}')
 
     if [ ${#pid_array[@]} -eq 0 ]; then
-        if sudo umount ${hdc_path} >/dev/null 2>&1; then
+        if sudo umount "${hdc_path}" >/dev/null 2>&1; then
             echo -e "\033[1;34m没有进程占用./hdc\033[0m"
             echo -e "\033[1;32m成功卸载文件系统\033[0m"
             break
@@ -989,7 +993,7 @@ while true; do
             echo -e "\033[1;31m无法卸载文件系统，正在重试...\033[0m"
         fi
     else
-        echo -e "\033[1;36m已杀死占用./hdc的进程，PID为：\033[0m${pid_array[@]}"
+        echo -e "\033[1;36m已杀死占用./hdc的进程，PID为：\033[0m${pid_array[*]}"
         sudo kill -9 "${pid_array[@]}"
     fi
     sleep 1
@@ -1165,4 +1169,4 @@ sudo chmod +x umount.sh
 ./umount.sh
 ```
 
-![image-20240509193208475](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images%2FYear%3A2024%2FMonth%3A05%2FDay%3A09%2F19%3A32%3A13_image-20240509193208475.png)
+![image-20240509193208475](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:09/19:32:13_image-20240509193208475.png)
