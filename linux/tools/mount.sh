@@ -13,5 +13,6 @@ if [ ! -d "${mount_folder}" ]; then
     mkdir "${mount_folder}"
 fi
 
-export TOOLS_PATH=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
-mount -t minix -o loop,offset=1024 ${TOOLS_PATH}/hdc.img ${TOOLS_PATH}/hdc
+TOOLS_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)
+export TOOLS_PATH
+mount -t minix -o loop,offset=1024 "${TOOLS_PATH}"/hdc.img "${TOOLS_PATH}"/hdc
