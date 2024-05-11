@@ -12,7 +12,7 @@ rm -f ./score/sorted_scores.txt
 # 按分数逆序排序
 {
     for file in ./score/*.txt; do
-        cat "${file}" | awk '{print $1, $4, $5}'
+        awk '{print $1, $4, $5}' "${file}"
         # 文件之间添加换行符
         printf "\n"
     done
