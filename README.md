@@ -990,7 +990,7 @@ while true; do
 done
 ```
 
-现在可以在本地直接访问Linux文件系统而不需要在模拟器终端中访问：
+现在可以在本地直接访问old-linux的文件系统而不需要在模拟器终端中访问：
 
 ```shell
 sudo chmod +x mount.sh
