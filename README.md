@@ -692,49 +692,39 @@ cd linux/handlers/src/
 >
 >   ![image-20240511151226202](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/15:12:26_image-20240511151226202.png)
 >
->   2）`linux/handlers/src/bochs-2.2.5/gdbstub.cc`：
+>   具体解决的编译报错如下：
 >
+>   ![image-20240511165324644](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/16:53:29_image-20240511165324644.png)
+>   
+>   ![image-20240511165401619](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/16:54:01_image-20240511165401619.png)
+>   
+>   2）`linux/handlers/src/bochs-2.2.5/gdbstub.cc`：
+>    
 >   ```c
 >   // @brief: add
->   // @line: 474-476
+>// @line: 474-476
 >   else if (last_stop_reason == GDBSTUB_STOP_NO_REASON) 
->   {
->     write_signal(&buf[1], SIGSEGV);
->   }
+>{
+>    write_signal(&buf[1], SIGSEGV);
+>}
 >   ```
->
+>   
 >   ![image-20240507190453389](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/19:04:58_image-20240507190453389.png)
->
+>   
 >   3）`linux/handlers/src/bochs-2.2.5/cpu/cpu.cc`：
->
+>   
 >   ```c
 >   // @brief: comment
 >   // @line: 142-146
->   // #if BX_GDBSTUB
+>// #if BX_GDBSTUB
 >   //     if (bx_dbg.gdbstub_enabled) {
->   //       return;
+>//       return;
 >   //     }
->   // #endif
+>// #endif
 >   ```
->
+>   
 >   ![image-20240507190658110](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/19:06:58_image-20240507190658110.png)
->
->   4）`linux/handlers/src/bochs-2.2.5/iodev/hdimage.h`：
->
->   ```c
->   // @brief: comment
->   // @line: 277，282
->   #ifndef PARANOID
->         //  sparse_image_t::
->   #endif
->                          get_physical_offset();
->    void
->   #ifndef PARANOID
->         //  sparse_image_t::
->   #endif
->   ```
->
->   ![image-20240507190835344](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/19:08:35_image-20240507190835344.png)
+>   
 
 ### ②改写内核源码过程（`linux/linux-0.12/`）
 
