@@ -92,9 +92,9 @@ function bochsInstall() {
 
     # fi
 
-    # if [ -d "/usr/local/share/bochs/" ]; then
-    #     sudo rm -rf "/usr/local/share/bochs/"
-    # fi
+    if [ -d "/usr/local/share/bochs/" ]; then
+        sudo rm -rf "/usr/local/share/bochs/"
+    fi
 
     if [ -d "bochs-2.2.5" ]; then
         cd bochs-2.2.5 || exit
