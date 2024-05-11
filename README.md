@@ -1119,6 +1119,8 @@ cd linux/tools/
 
 ![image-20240507202603623](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:26:04_image-20240507202603623.png)
 
+#### 3）编译运行
+
 ```shell
 ls
 make all # gdb模式如果卡住请在本地终端输入`c`键并回车
