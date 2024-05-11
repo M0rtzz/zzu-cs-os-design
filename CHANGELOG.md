@@ -1,3 +1,9 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [1.5.1](https://gitcode.com/M0rtzz/zzu-cs-os-design/compare/v1.5.0...v1.5.1) (2024-05-11)
+
 ## 1.5.0 (2024-05-11)
 
 * 🔖 tag(package.json): v1.5.0 ([2fbb076](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/2fbb076))
@@ -464,6 +470,3 @@
 
 * chore(release): 1.0.1 ([d447a9b](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/d447a9b))
 * 🎉 init: init commit ([c7e9e28](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/c7e9e28))
-
-
-
