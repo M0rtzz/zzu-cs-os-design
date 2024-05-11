@@ -11,7 +11,7 @@ cd zzu-cs-os-design/
 >
 >   该仓库部分Shell脚本的`shebang`设置的Shell解释器是`/bin/zsh`，未安装`z-shell`的请自行改为`/bin/bash`，脚本语法也均通过ShellCheck检查：
 >
->   ![image-20240511151811940](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/15:18:12_image-20240511151811940.png)
+>   ![image-20240511152526959](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/15:25:38_image-20240511152526959.png)
 
 ## 第一题
 
