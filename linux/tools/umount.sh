@@ -15,10 +15,10 @@ while true; do
 
     while IFS= read -r pid; do
         pid_array+=("${pid}")
-    done < <(lsof ${hdc_path} | awk '$2 != "PID" {print $2}')
+    done < <(lsof "${hdc_path}" | awk '$2 != "PID" {print $2}')
 
     if [ ${#pid_array[@]} -eq 0 ]; then
-        if sudo umount ${hdc_path} >/dev/null 2>&1; then
+        if sudo umount "${hdc_path}" >/dev/null 2>&1; then
             echo -e "\033[1;34m没有进程占用./hdc\033[0m"
             echo -e "\033[1;32m成功卸载文件系统\033[0m"
             break
@@ -26,7 +26,7 @@ while true; do
             echo -e "\033[1;31m无法卸载文件系统，正在重试...\033[0m"
         fi
     else
-        echo -e "\033[1;36m已杀死占用./hdc的进程，PID为：\033[0m${pid_array[@]}"
+        echo -e "\033[1;36m已杀死占用./hdc的进程，PID为：\033[0m${pid_array[*]}"
         sudo kill -9 "${pid_array[@]}"
     fi
     sleep 1
