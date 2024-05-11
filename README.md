@@ -656,7 +656,7 @@ make all
 因不想使用官方推荐的`aptitude`工具（此工具一般用于解决依赖问题，它会`autoremove`系统中的软件包），但此系统使用`apt`安装时没有遇见依赖问题，所以我还是使用了`apt`：
 
 ```shell
-# @file: linux/src/code/setup.sh
+# @file: linux/handlers/src/setup.sh
 # @brief: comment and rewrite
 # @line: 98，99
 sudo apt update && sudo apt install libgtk2.0-dev
@@ -665,7 +665,7 @@ sudo apt update && sudo apt install libgtk2.0-dev
 ![image-20240507200336319](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:03:36_image-20240507200336319.png)
 
 ```shell
-cd linux/src/code/
+cd linux/handlers/src/
 ./setup.sh
 ```
 
@@ -673,7 +673,7 @@ cd linux/src/code/
 >
 >   以下为编译和最后运行Bochs时出现BUG后经过code spelunking后解决问题的过程【本仓库上传的源码鄙人已解决BUG:)】：
 >
->   1）`linux/src/code/setup.sh`：
+>   1）`linux/handlers/src/setup.sh`：
 >
 >   ```shell
 >   # @brief: add
@@ -690,7 +690,7 @@ cd linux/src/code/
 >
 >   ![image-20240507202101733](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:21:01_image-20240507202101733.png)
 >
->   2）`linux/src/code//bochs-2.2.5/gdbstub.cc`：
+>   2）`linux/handlers/src/bochs-2.2.5/gdbstub.cc`：
 >
 >   ```c
 >   // @brief: add
@@ -703,7 +703,7 @@ cd linux/src/code/
 >
 >   ![image-20240507190453389](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/19:04:58_image-20240507190453389.png)
 >
->   3）`linux/src/code/bochs-2.2.5/cpu/cpu.cc`：
+>   3）`linux/handlers/src/bochs-2.2.5/cpu/cpu.cc`：
 >
 >   ```c
 >   // @brief: comment
@@ -717,7 +717,7 @@ cd linux/src/code/
 >
 >   ![image-20240507190658110](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/19:06:58_image-20240507190658110.png)
 >
->   4）`linux/src/code/bochs-2.2.5/iodev/hdimage.h`：
+>   4）`linux/handlers/src/bochs-2.2.5/iodev/hdimage.h`：
 >
 >   ```c
 >   // @brief: comment
@@ -911,7 +911,7 @@ if [ -f "${lock_file}" ]; then
     rm "${lock_file}"
 fi
 
-export OSLAB_PATH=$(dirname `which $0`)
+export TOOLS_PATH=$(dirname `which $0`)
 
 if [ ! -e "hdc.img" ]; then
 tar -xvJf hdc.tar.xz
@@ -919,13 +919,13 @@ fi
 
 if [ "$1" ] && [ "$1" = "-m" ]
 then
-(cd ../linux-0.12; make clean; make; cp Image ../oslab/Image)
+(cd ../linux-0.12; make clean; make; cp Image ../tools/Image)
 elif [ "$1" ] && [ "$1" = "-g" ]
 then
-${OSLAB_PATH}/bochs/bochs-gdb -q -f ${OSLAB_PATH}/bochs/bochsrc-gdb.bxrc & \
-gdb -x ${OSLAB_PATH}/bochs/.gdbrc ../linux-0.12/tools/system
+${TOOLS_PATH}/bochs/bochs-gdb -q -f ${TOOLS_PATH}/bochs/bochsrc-gdb.bxrc & \
+gdb -x ${TOOLS_PATH}/bochs/.gdbrc ../linux-0.12/tools/system
 else
-bochs -q -f ${OSLAB_PATH}/bochs/bochsrc.bxrc
+bochs -q -f ${TOOLS_PATH}/bochs/bochsrc.bxrc
 fi
 ```
 
@@ -956,8 +956,8 @@ if [ ! -d "${mount_folder}" ]; then
     mkdir "${mount_folder}"
 fi
 
-export OSLAB_PATH=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
-mount -t minix -o loop,offset=1024 ${OSLAB_PATH}/hdc.img ${OSLAB_PATH}/hdc
+export TOOLS_PATH=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
+mount -t minix -o loop,offset=1024 ${TOOLS_PATH}/hdc.img ${TOOLS_PATH}/hdc
 ```
 
 ```shell
