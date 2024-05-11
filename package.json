@@ -1,6 +1,6 @@
 {
   "name": "zzu-cs-os-design",
-  "version": "v1.4.6",
+  "version": "v1.4.7",
   "description": "郑州大学计科2024操作系统实验设计",
   "main": ".cz-config.js",
   "scripts": {
