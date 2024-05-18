@@ -16,7 +16,6 @@ function _echoSuccess() {
 }
 
 function envInstall() {
-
     if sudo apt install -y make bin86 gcc-multilib &>/dev/null; then
         _echoSuccess "bin86 is installed."
     else
@@ -64,11 +63,13 @@ function envInstall() {
 }
 
 function bochsInstall() {
-
-    sudo apt install -y build-essential libgtk2.0-dev \
+    sudo apt install -y build-essential \
         libx11-dev xserver-xorg-dev xorg-dev g++ \
         pkg-config libxcursor-dev libxrandr-dev \
         libxinerama-dev libxi-dev &>/dev/null
+
+    # sudo apt install aptitude && sudo apt install libgtk2.0-dev
+    sudo apt install libgtk2.0-dev &>/dev/null
 
     # INFO: https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST
     # NOTE: M0rtzz have resolved the bug in the source code
@@ -107,9 +108,6 @@ function bochsInstall() {
         sed -i 's/CXXFLAGS="-g"/CXXFLAGS="-g -fpermissive"/g' ./configure
         sed -i 's/CXXFLAGS="-O2"/CXXFLAGS="-O2 -fpermissive"/g' ./configure
 
-        # sudo apt install aptitude && sudo apt install libgtk2.0-dev
-        sudo apt update && sudo apt install libgtk2.0-dev
-
         # TAG: 支持GNU gdb
         # ./configure --enable-gdb-stub --enable-disasm
         ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --enable-show-ips --disable-reset-on-triple-fault --with-all-libs
@@ -144,5 +142,6 @@ echo "脚本将完成以下两件事："
 echo "    1. 为系统安装相应的编译环境（make，bin86，gcc-3.4，gcc-multilib）"
 echo "    2. 在\${TOOLS_PATH}/bochs/下生成一个bochs-gdb，然后使用sudo make install将bochs可执行文件安装到/usr/local/bin/目录中，同时执行其他安装操作（例如install_doc、install_share、install_man等）"
 
+sudo apt update -y
 envInstall
 bochsInstall
