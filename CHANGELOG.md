@@ -1,9 +1,8 @@
-## <small>1.6.1 (2024-05-18)</small>
+# Changelog
 
-* ♻️ refactor(setup.sh): refactor ([a5bb305](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/a5bb305))
-* 🔖 tag(package.json): v1.6.1 ([c02e7dc](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/c02e7dc))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
+## [1.6.2](https://gitcode.com/M0rtzz/zzu-cs-os-design/compare/v1.6.1...v1.6.2) (2024-05-18)
 
 ## 1.6.0 (2024-05-18)
 
@@ -549,6 +548,3 @@
 
 * chore(release): 1.0.1 ([d447a9b](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/d447a9b))
 * 🎉 init: init commit ([c7e9e28](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/c7e9e28))
-
-
-
