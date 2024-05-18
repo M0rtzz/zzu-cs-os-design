@@ -660,11 +660,11 @@ make all
 ```shell
 # @file: linux/handlers/src/setup.sh
 # @brief: comment and rewrite
-# @line: 110，111
-sudo apt update && sudo apt install libgtk2.0-dev
+# @line: 73，74
+sudo apt install libgtk2.0-dev &>/dev/null
 ```
 
-![image-20240511151152673](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/15:11:57_image-20240511151152673.png)
+![image-20240518132127337](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:18/13:21:52_image-20240518132127337.png)
 
 ```shell
 cd linux/handlers/src/
@@ -679,7 +679,7 @@ cd linux/handlers/src/
 >
 >   ```shell
 >   # @brief: add
->   # @line: 102-108
+>   # @line: 106-112
 >   
 >   # 添加 `-fpermissive` 以防编译报错
 >   sed -i 's/CFLAGS="-g -O2"/CFLAGS="-g -O2 -fpermissive"/g' ./configure
@@ -690,7 +690,7 @@ cd linux/handlers/src/
 >   sed -i 's/CXXFLAGS="-O2"/CXXFLAGS="-O2 -fpermissive"/g' ./configure
 >   ```
 >
->   ![image-20240511151226202](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/15:12:26_image-20240511151226202.png)
+>   ![image-20240518134319816](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:18/13:43:19_image-20240518134319816.png)
 >
 >   具体解决的编译报错如下：
 >
