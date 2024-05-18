@@ -114,7 +114,7 @@ function bochsInstall() {
         # ./configure --enable-gdb-stub --enable-disasm
         ./configure --enable-gdb-stub --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --enable-show-ips --disable-reset-on-triple-fault --with-all-libs
 
-        #TAG: 包含bochs自带的debug工具
+        # TAG: 包含bochs自带的debug工具
         # ./configure --enable-debugger --enable-disasm
         # ./configure --enable-disasm --enable-debugger --enable-new-pit --enable-all-optimizations --enable-4meg-pages --enable-global-pages --enable-pae --enable-sep --enable-cpu-level=6 --enable-sse=2 --disable-reset-on-triple-fault --with-all-libs
 
