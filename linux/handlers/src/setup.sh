@@ -55,9 +55,11 @@ function envInstall() {
 
         sudo dpkg -i ${GCC_DIR}/*.deb &>/dev/null
         sudo apt install -y -f &>/dev/null
+
         if [ -n "$(command -v gcc-3.4)" ]; then
             _echoSuccess "gcc-3.4 is installed."
         fi
+
         rm -rf ${GCC_DIR}
     fi
 }
@@ -100,6 +102,7 @@ function bochsInstall() {
     if [ -d "bochs-2.2.5" ]; then
         cd bochs-2.2.5 || exit
         make clean
+
         # 添加 `-fpermissive` 以防编译报错
         sed -i 's/CFLAGS="-g -O2"/CFLAGS="-g -O2 -fpermissive"/g' ./configure
         sed -i 's/CFLAGS="-g"/CFLAGS="-g -fpermissive"/g' ./configure
