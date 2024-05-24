@@ -23,7 +23,7 @@ function envInstall() {
     fi
 
     if [ -n "$(command -v gcc-3.4)" ]; then
-        _echoSuccess "GCC-3.4 is installed."
+        _echoSuccess "gcc-3.4 is installed."
         return
     fi
 
@@ -53,14 +53,14 @@ function envInstall() {
             fi
         done
 
-        sudo dpkg -i ${GCC_DIR}/*.deb &>/dev/null
-        sudo apt install -y -f &>/dev/null
+        cd ${GCC_DIR} || exit
+        sudo apt install ./*.deb &>/dev/null
 
         if [ -n "$(command -v gcc-3.4)" ]; then
             _echoSuccess "gcc-3.4 is installed."
         fi
 
-        rm -rf ${GCC_DIR}
+        cd ../ && rm -rf ${GCC_DIR}
     fi
 }
 
@@ -100,7 +100,7 @@ function bochsInstall() {
     fi
 
     if [ -d "bochs-2.2.5" ]; then
-        cd bochs-2.2.5 || exit
+        cd bochs-2.2.5/ || exit
         make clean
 
         # 添加 `-fpermissive` 以防编译报错
