@@ -1,40 +1,8 @@
-## <small>1.6.5 (2024-05-24)</small>
+# Changelog
 
-* ♻️ refactor(setup.sh): change how the deb package is installed ([471f55c](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/471f55c))
-* 🔖 tag(package.json): v1.6.5 ([d434753](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/d434753))
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
-
-
-## <small>1.6.4 (2024-05-18)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([68dc59d](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/68dc59d))
-* 🔖 tag(package.json): v1.6.4 ([300514d](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/300514d))
-
-
-
-## <small>1.6.3 (2024-05-18)</small>
-
-* ♻️ refactor(setup.sh): refactor ([e7772f9](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/e7772f9))
-* 📝 docs: update doc file ([2e0f89e](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/2e0f89e))
-* 📝 docs(CHANGELOG.md): automatic update ([f37feb9](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/f37feb9))
-* 🔖 tag(package.json): v1.6.3 ([8f3a999](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/8f3a999))
-
-
-
-## <small>1.6.2 (2024-05-18)</small>
-
-* 📝 docs(CHANGELOG.md): automatic update ([837090d](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/837090d))
-* 🔖 tag(package.json): v1.6.2 ([98992da](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/98992da))
-
-
-
-## <small>1.6.1 (2024-05-18)</small>
-
-* ♻️ refactor(setup.sh): refactor ([a5bb305](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/a5bb305))
-* 📝 docs(CHANGELOG.md): automatic update ([b57a224](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/b57a224))
-* 🔖 tag(package.json): v1.6.1 ([c02e7dc](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/c02e7dc))
-
-
+## [1.6.6](https://gitcode.com/M0rtzz/zzu-cs-os-design/compare/v1.6.5...v1.6.6) (2024-05-24)
 
 ## 1.6.0 (2024-05-18)
 
@@ -580,6 +548,3 @@
 
 * chore(release): 1.0.1 ([d447a9b](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/d447a9b))
 * 🎉 init: init commit ([c7e9e28](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/detail/c7e9e28))
-
-
-
