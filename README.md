@@ -769,7 +769,7 @@ sys_lstat, sys_readlink, sys_uselib, sys_m0rtzz, sys_ashore};
 
 ![image-20240430234729099](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:04/Day:30/23:47:29_image-20240430234729099.png)
 
-####  4）`kernel/ststem_call.s`
+####  3）`kernel/ststem_call.s`
 
 ```asm
 # @brief: change
@@ -779,7 +779,7 @@ nr_system_calls = 84
 
 ![image-20240430235020839](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:04/Day:30/23:50:20_image-20240430235020839.png)
 
-#### 5）`kernel/m0rtzz.c`
+#### 4）`kernel/m0rtzz.c`
 
 ```c
 /**
@@ -867,7 +867,7 @@ int sys_ashore(char *str, unsigned int size)
 }
 ```
 
-#### 6）`kernel/Makefile`
+#### 5）`kernel/Makefile`
 
 ```makefile
 # @brief: add
