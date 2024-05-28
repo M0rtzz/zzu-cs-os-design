@@ -26,7 +26,7 @@ touch score/1.txt score/2.txt score/3.txt
 
 `1.txt`
 
-```plaintxt
+```txt
 李娜 郑州大学 2021级 1班 85
 张伟 郑州大学 2021级 1班 72
 刘波 郑州大学 2021级 1班 93
@@ -41,7 +41,7 @@ touch score/1.txt score/2.txt score/3.txt
 
 `2.txt`
 
-```plaintxt
+```txt
 萧燕 郑州大学 2021级 2班 88
 方莹 郑州大学 2021级 2班 76
 高翔 郑州大学 2021级 2班 95
@@ -55,7 +55,7 @@ touch score/1.txt score/2.txt score/3.txt
 
 `3.txt`
 
-```plain.txt
+```txt
 彭辉 郑州大学 2021级 3班 92
 齐东 郑州大学 2021级 3班 74
 任梅 郑州大学 2021级 3班 89
@@ -771,7 +771,7 @@ sys_lstat, sys_readlink, sys_uselib, sys_m0rtzz, sys_ashore};
 
 ####  4）`kernel/ststem_call.s`
 
-```assembly
+```asm
 # @brief: change
 # @line: 63
 nr_system_calls = 84
