@@ -71,7 +71,7 @@ function bochsInstall() {
         libxinerama-dev libxi-dev &>/dev/null
 
     # sudo apt install aptitude && sudo apt install libgtk2.0-dev
-    sudo apt install libgtk2.0-dev &>/dev/null
+    sudo apt install -y libgtk2.0-dev &>/dev/null
 
     # INFO: https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST
     # NOTE: M0rtzz have resolved the bug in the source code
