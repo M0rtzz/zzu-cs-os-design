@@ -1,8 +1,67 @@
-# Changelog
+## <small>1.6.8 (2024-06-13)</small>
 
-All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+* 📝 docs: update doc file ([b3fda6f](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/b3fda6f))
+* 📝 docs: update docs ([ff8a5d5](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/ff8a5d5))
+* 📝 docs(CHANGELOG.md): automatic update ([bd7bb3f](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/bd7bb3f))
+* 🔖 tag(package.json): v1.6.8 ([e3891fb](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/e3891fb))
+* 🔖 tag(package.json): v1.6.8 ([53ad631](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/53ad631))
+* 🔨 script(setup.sh): update apt cmd ([2e79499](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/2e79499))
 
-## [1.6.9](https://gitcode.com/M0rtzz/zzu-cs-os-design/compare/v1.6.7...v1.6.9) (2024-06-13)
+
+
+## <small>1.6.7 (2024-05-28)</small>
+
+* 📝 docs: update doc file ([f02a47e](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/f02a47e))
+* 📝 docs(CHANGELOG.md): automatic update ([d862a87](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/d862a87))
+* 🔖 tag(package.json): v1.6.7 ([d949642](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/d949642))
+
+
+
+## <small>1.6.6 (2024-05-24)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([1cdae68](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/1cdae68))
+* 🔖 tag(package.json): v1.6.6 ([d798a65](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/d798a65))
+
+
+
+## <small>1.6.5 (2024-05-24)</small>
+
+* ♻️ refactor(setup.sh): change how the deb package is installed ([471f55c](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/471f55c))
+* 📝 docs(CHANGELOG.md): automatic update ([8135b72](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/8135b72))
+* 🔖 tag(package.json): v1.6.5 ([d434753](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/d434753))
+
+
+
+## <small>1.6.4 (2024-05-18)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([68dc59d](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/68dc59d))
+* 🔖 tag(package.json): v1.6.4 ([300514d](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/300514d))
+
+
+
+## <small>1.6.3 (2024-05-18)</small>
+
+* ♻️ refactor(setup.sh): refactor ([e7772f9](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/e7772f9))
+* 📝 docs: update doc file ([2e0f89e](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/2e0f89e))
+* 📝 docs(CHANGELOG.md): automatic update ([f37feb9](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/f37feb9))
+* 🔖 tag(package.json): v1.6.3 ([8f3a999](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/8f3a999))
+
+
+
+## <small>1.6.2 (2024-05-18)</small>
+
+* 📝 docs(CHANGELOG.md): automatic update ([837090d](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/837090d))
+* 🔖 tag(package.json): v1.6.2 ([98992da](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/98992da))
+
+
+
+## <small>1.6.1 (2024-05-18)</small>
+
+* ♻️ refactor(setup.sh): refactor ([a5bb305](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/a5bb305))
+* 📝 docs(CHANGELOG.md): automatic update ([b57a224](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/b57a224))
+* 🔖 tag(package.json): v1.6.1 ([c02e7dc](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/c02e7dc))
+
+
 
 ## 1.6.0 (2024-05-18)
 
@@ -548,3 +607,6 @@ All notable changes to this project will be documented in this file. See [commit
 
 * chore(release): 1.0.1 ([d447a9b](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/d447a9b))
 * 🎉 init: init commit ([c7e9e28](https://gitcode.com/M0rtzz/zzu-cs-os-design/commits/c7e9e28))
+
+
+
