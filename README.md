@@ -3,7 +3,7 @@
 克隆该仓库：
 
 ```shell
-git clone https://gitcode.com/M0rtzz/zzu-cs-os-design.git
+git clone https://github.com/M0rtzz/zzu-cs-os-design.git
 cd zzu-cs-os-design/
 ```
 
