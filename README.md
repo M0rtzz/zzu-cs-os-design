@@ -1,4 +1,4 @@
-# ZZU-OS-2024大作业
+# OS设计实验过程笔记
 
 克隆该仓库：
 
@@ -11,7 +11,7 @@ cd zzu-cs-os-design/
 >
 >   该仓库部分Shell脚本的`shebang`设置的Shell解释器是`/bin/zsh`，未安装`z-shell`的请自行改为`/bin/bash`，脚本语法也均通过ShellCheck检查：
 >
->   ![image-20240511152526959](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/15:25:38_image-20240511152526959.png)
+>   ![image-20240511152526959](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:11/15:25:38_image-20240511152526959.png)
 
 ## 第一题
 
@@ -126,13 +126,13 @@ sudo chmod +x score.sh
 ./score.sh
 ```
 
-![image-20240430205354433](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:04/Day:30/20:53:59_image-20240430205354433.png)
+![image-20240430205354433](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:30/20:53:59_image-20240430205354433.png)
 
 ```shell
 cat ./score/sorted_scores.txt
 ```
 
-![image-20240502170715779](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/17:07:15_image-20240502170715779.png)
+![image-20240502170715779](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:02/17:07:15_image-20240502170715779.png)
 
 ---
 
@@ -158,7 +158,7 @@ sudo apt update -y && sudo apt upgrade -y && sudo apt install clang clangd llvm 
 clang --version
 ```
 
-![image-20240502170439665](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/17:04:44_image-20240502170439665.png)
+![image-20240502170439665](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:02/17:04:44_image-20240502170439665.png)
 
 ### ②构建工具
 
@@ -352,7 +352,7 @@ make all
 ./out/pv.out
 ```
 
-![image-20240502170919572](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/17:09:19_image-20240502170919572.png)
+![image-20240502170919572](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:02/17:09:19_image-20240502170919572.png)
 
 ---
 
@@ -363,7 +363,7 @@ make all
 ```c
 /**
  * @file socket_server.c
- * @brief  服务器
+ * @brief 服务器
  * @author M0rtzz E-mail : m0rtzz@outlook.com
  * @version 1.0
  * @date 2024-05-01
@@ -524,7 +524,7 @@ signed main()
 ```c
 /**
  * @file socket_client.c
- * @brief  客户机
+ * @brief 客户机
  * @author M0rtzz E-mail : m0rtzz@outlook.com
  * @version 1.0
  * @date 2024-05-01
@@ -637,11 +637,11 @@ make all
 ./out/socket_client.out # 不多于5个
 ```
 
-![image-20240502151515955](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/15:15:16_image-20240502151515955.png)
+![image-20240502151515955](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:02/15:15:16_image-20240502151515955.png)
 
-![image-20240502151535838](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/15:15:35_image-20240502151535838.png)
+![image-20240502151535838](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:02/15:15:35_image-20240502151535838.png)
 
-![image-20240502151546612](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:02/15:15:46_image-20240502151546612.png)
+![image-20240502151546612](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:02/15:15:46_image-20240502151546612.png)
 
 ---
 
@@ -651,9 +651,9 @@ make all
 
 安装版本为Bochs-2.2.5，原因是：
 
-[*https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST*](https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST)
+[https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST#L7-L10](https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST#L7-L10)
 
-![image-20240505001129646](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:05/00:11:29_image-20240505001129646.png)
+![image-20240505001129646](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:05/00:11:29_image-20240505001129646.png)
 
 因不想使用官方推荐的`aptitude`工具（此工具一般用于解决依赖问题，它会`autoremove`系统中的软件包），但此系统使用`apt`安装时没有遇见依赖问题，所以我还是使用了`apt`：
 
@@ -664,7 +664,7 @@ make all
 sudo apt install libgtk2.0-dev &>/dev/null
 ```
 
-![image-20240518132127337](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:18/13:21:52_image-20240518132127337.png)
+![image-20240518132127337](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:18/13:21:52_image-20240518132127337.png)
 
 ```shell
 cd linux/handlers/src/
@@ -690,13 +690,13 @@ cd linux/handlers/src/
 >   sed -i 's/CXXFLAGS="-O2"/CXXFLAGS="-O2 -fpermissive"/g' ./configure
 >   ```
 >
->   ![image-20240518134319816](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:18/13:43:19_image-20240518134319816.png)
+>   ![image-20240518134319816](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:18/13:43:19_image-20240518134319816.png)
 >
 >   具体解决的编译报错如下：
 >
->   ![image-20240511165324644](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/16:53:29_image-20240511165324644.png)
+>   ![image-20240511165324644](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:11/16:53:29_image-20240511165324644.png)
 >   
->   ![image-20240511165401619](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:11/16:54:01_image-20240511165401619.png)
+>   ![image-20240511165401619](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:11/16:54:01_image-20240511165401619.png)
 >   
 >   2）`linux/handlers/src/bochs-2.2.5/gdbstub.cc`：
 >    
@@ -709,7 +709,7 @@ cd linux/handlers/src/
 >}
 >   ```
 >   
->   ![image-20240507190453389](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/19:04:58_image-20240507190453389.png)
+>   ![image-20240507190453389](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/19:04:58_image-20240507190453389.png)
 >   
 >   3）`linux/handlers/src/bochs-2.2.5/cpu/cpu.cc`：
 >   
@@ -723,14 +723,14 @@ cd linux/handlers/src/
 >// #endif
 >   ```
 >   
->   ![image-20240507190658110](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/19:06:58_image-20240507190658110.png)
+>   ![image-20240507190658110](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/19:06:58_image-20240507190658110.png)
 >   
 
-### ②改写内核源码过程（`linux/linux-0.12/`）
+### ②改写内核源码过程（linux/linux-0.12/）
 
 本仓库中的`linux/linux-0.12`鄙人已修改过源码，未修改过的源码tarball包为`linux/linux-0.12-pure-unmodified.tar.gz`。
 
-#### 1）`include/unistd.h`
+#### 1）include/unistd.h
 
 ```c
 // @brief: add
@@ -739,9 +739,9 @@ cd linux/handlers/src/
 #define __NR_ashore 88
 ```
 
-![image-20240430234545579](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:04/Day:30/23:45:45_image-20240430234545579.png)
+![image-20240430234545579](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:30/23:45:45_image-20240430234545579.png)
 
-#### 2）`include/linux/sys.h`
+#### 2）include/linux/sys.h
 
 ```c
 // @brief: add
@@ -767,9 +767,9 @@ sys_settimeofday, sys_getgroups, sys_setgroups, sys_select, sys_symlink,
 sys_lstat, sys_readlink, sys_uselib, sys_m0rtzz, sys_ashore};
 ```
 
-![image-20240430234729099](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:04/Day:30/23:47:29_image-20240430234729099.png)
+![image-20240430234729099](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:30/23:47:29_image-20240430234729099.png)
 
-####  3）`kernel/ststem_call.s`
+####  3）kernel/ststem_call.s
 
 ```asm
 # @brief: change
@@ -777,9 +777,9 @@ sys_lstat, sys_readlink, sys_uselib, sys_m0rtzz, sys_ashore};
 nr_system_calls = 84
 ```
 
-![image-20240430235020839](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:04/Day:30/23:50:20_image-20240430235020839.png)
+![image-20240430235020839](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:30/23:50:20_image-20240430235020839.png)
 
-#### 4）`kernel/m0rtzz.c`
+#### 4）kernel/m0rtzz.c
 
 ```c
 /**
@@ -867,7 +867,7 @@ int sys_ashore(char *str, unsigned int size)
 }
 ```
 
-#### 5）`kernel/Makefile`
+#### 5）kernel/Makefile
 
 ```makefile
 # @brief: add
@@ -877,7 +877,7 @@ OBJS  = sched.o sys_call.o traps.o asm.o fork.o \
 	signal.o mktime.o m0rtzz.o
 ```
 
-![image-20240430214043735](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:04/Day:30/21:40:43_image-20240430214043735.png)
+![image-20240430214043735](https://static.m0rtzz.com/images/Year:2024/Month:04/Day:30/21:40:43_image-20240430214043735.png)
 
 ```makefile
 # @brief: add
@@ -885,7 +885,7 @@ OBJS  = sched.o sys_call.o traps.o asm.o fork.o \
 m0rtzz.s m0rtzz.o: m0rtzz.c ../include/asm/segment.h ../include/string.h ../include/errno.h
 ```
 
-![image-20240501001113260](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/00:11:13_image-20240501001113260.png)
+![image-20240501001113260](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:01/00:11:13_image-20240501001113260.png)
 
 ### ③编译linux-0.12
 
@@ -997,7 +997,7 @@ sudo chmod +x mount.sh
 ./mount.sh
 ```
 
-![image-20240508163314254](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:08/16:33:19_image-20240508163314254.png)
+![image-20240508163314254](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:08/16:33:19_image-20240508163314254.png)
 
 之后需要修改此文件系统下的`/usr/include/unistd.h`并在此系统编写我们的上层C语言代码来调用我们之前编写进内核的系统调用函数：
 
@@ -1013,7 +1013,7 @@ code hdc/
 #define __NR_ashore 88
 ```
 
-![image-20240501193252889](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:32:52_image-20240501193252889.png)
+![image-20240501193252889](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:01/19:32:52_image-20240501193252889.png)
 
 ```c
 /**
@@ -1102,7 +1102,7 @@ cd linux/tools/
 
 进入系统之后输入基础命令发现正常使用，无BUG：
 
-![image-20240508163431826](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:08/16:34:32_image-20240508163431826.png)
+![image-20240508163431826](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:08/16:34:32_image-20240508163431826.png)
 
 #### 2）以gdb模式进入linux-0.12
 
@@ -1113,11 +1113,11 @@ cd linux/tools/
 
 一开始本地终端进入gdb模式但模拟器终端没有进入文件系统：
 
-![image-20240507202509513](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:25:09_image-20240507202509513.png)
+![image-20240507202509513](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/20:25:09_image-20240507202509513.png)
 
 我们需要在本地终端按`c`键（continue）并回车进入文件系统后就可以正常使用命令了：
 
-![image-20240507202603623](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:26:04_image-20240507202603623.png)
+![image-20240507202603623](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/20:26:04_image-20240507202603623.png)
 
 #### 3）编译运行
 
@@ -1127,32 +1127,32 @@ make all # gdb模式如果卡住请在本地终端输入`c`键并回车
 ls
 ```
 
-![image-20240507212752814](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/21:27:52_image-20240507212752814.png)
+![image-20240507212752814](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/21:27:52_image-20240507212752814.png)
 
 ```shell
 ./m0rtzz_1.out I_am_M0rtzzGod
 ./m0rtzz_2.out
 ```
 
-![image-20240501195322602](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:01/19:53:22_image-20240501195322602.png)
+![image-20240501195322602](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:01/19:53:22_image-20240501195322602.png)
 
 ### ⑥退出linux-0.12
 
 #### 1）普通模式退出linux-0.12
 
-直接点击模拟器终端右上角的` ×`即可退出：
+直接点击模拟器终端右上角的`×`即可退出：
 
-![image-20240507202415072](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:24:15_image-20240507202415072.png)
+![image-20240507202415072](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/20:24:15_image-20240507202415072.png)
 
-![image-20240508163507433](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:08/16:35:07_image-20240508163507433.png)
+![image-20240508163507433](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:08/16:35:07_image-20240508163507433.png)
 
 #### 2）gdb模式退出linux-0.12
 
 点击模拟器终端右上角的`×`后在本地终端输入`q`键并回车即可退出：
 
-![image-20240507202931291](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:07/20:29:31_image-20240507202931291.png)
+![image-20240507202931291](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:07/20:29:31_image-20240507202931291.png)
 
-![image-20240508163636331](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:08/16:36:36_image-20240508163636331.png)
+![image-20240508163636331](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:08/16:36:36_image-20240508163636331.png)
 
 ### ⑦卸载文件系统
 
@@ -1161,4 +1161,4 @@ sudo chmod +x umount.sh
 ./umount.sh
 ```
 
-![image-20240509193208475](https://jsd.cdn.zzko.cn/gh/M0rtzz/ImageHosting@master/images/Year:2024/Month:05/Day:09/19:32:13_image-20240509193208475.png)
+![image-20240509193208475](https://static.m0rtzz.com/images/Year:2024/Month:05/Day:09/19:32:13_image-20240509193208475.png)
