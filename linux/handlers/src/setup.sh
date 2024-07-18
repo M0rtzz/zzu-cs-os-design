@@ -73,7 +73,7 @@ function bochsInstall() {
     # sudo apt install aptitude && sudo apt install libgtk2.0-dev
     sudo apt install -y libgtk2.0-dev &>/dev/null
 
-    # INFO: https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST
+    # INFO: https://github.com/oldlinux-web/oldlinux-files/blob/master/bochs/README_FIRST#L7-L10
     # NOTE: M0rtzz have resolved the bug in the source code
     # if [ ! -e "bochs-2.2.5.tar.gz" ]; then
     #     # wget https://downloads.sourceforge.net/project/bochs/bochs/2.6.9/bochs-2.6.9.tar.gz -q --show-progress  && \
